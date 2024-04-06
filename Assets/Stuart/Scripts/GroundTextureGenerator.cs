@@ -1,18 +1,28 @@
+using System;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 [ExecuteInEditMode]
 public class GroundTextureGenerator : MonoBehaviour
 {
+	public Texture2D savedTexture;
 	public bool showArea { get; set; }
 	public Vector3 startPosition { get; set; } = new Vector3(0, 0, 0);
 
 	public Vector3 extents { get; set; } = new Vector3(20, 20, 20);
 	public Vector2Int textureSize { get; set; } = new Vector2Int(1024, 1024);
 	public string traversableTag { get; set; } = "Traversable";
+	public bool bakeOnLoad  = true;
+
+	private void Awake()
+	{
+		if (bakeOnLoad) Generate();
+	}
 
 	public Texture2D Generate()
 	{
-		var texture = new Texture2D(textureSize.x, textureSize.y,TextureFormat.RGBAFloat,false);
+		var texture = new Texture2D(textureSize.x, textureSize.y, TextureFormat.RGBAFloat, false);
 
 		var startPos = startPosition - new Vector3(extents.x / 2, 0, extents.y / 2);
 		var xIncrement = extents.x / textureSize.x;
@@ -30,11 +40,12 @@ public class GroundTextureGenerator : MonoBehaviour
 						traversable = false;
 					}
 				}
+
 				texture.SetPixel(x, y, traversable ? Color.white : Color.black);
-				
 			}
 		}
 
+		savedTexture = texture;
 		texture.Apply();
 		return texture;
 	}
