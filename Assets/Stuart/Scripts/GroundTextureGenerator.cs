@@ -50,10 +50,10 @@ public class GroundTextureGenerator : MonoBehaviour
 				}
 
 				texture.SetPixel(x, y, traversable ? Color.white : Color.black);
-				if (x % 10 == 0 && y % 10 == 0)
-				{
-					Debug.DrawRay(pos, Vector3.up, traversable ? Color.green : Color.red, 2f);
-				}
+				// if (x % 10 == 0 && y % 10 == 0)
+				// {
+				// 	Debug.DrawRay(pos, Vector3.up, traversable ? Color.green : Color.red, 2f);
+				// }
 			}
 		}
 

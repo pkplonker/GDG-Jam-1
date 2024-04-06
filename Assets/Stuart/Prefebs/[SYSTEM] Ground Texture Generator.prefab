@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7951141764983777731}
   - component: {fileID: 3700038560117011841}
+  - component: {fileID: 3429312524425800592}
   m_Layer: 0
   m_Name: '[SYSTEM] Ground Texture Generator'
   m_TagString: Untagged
@@ -45,3 +46,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   savedTexture: {fileID: 0}
+  bakeOnLoad: 1
+  roombaHeight: 0.2
+--- !u!114 &3429312524425800592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328840533319073882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed1d4ec9261fa144bb9ffe6f604ca9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texture: {fileID: 0}
+  target: {fileID: 0}
+  targetRadius: 0.75

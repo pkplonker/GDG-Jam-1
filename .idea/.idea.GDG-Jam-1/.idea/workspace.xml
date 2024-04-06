@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3cd1cef-2ea5-4c08-8efa-a1b9dab781dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Prefebs/RubbishTest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Prefebs/RubbishTest.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Prefebs/RubbishTest2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Prefebs/RubbishTest2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Prefebs/[SYSTEM] Ground Texture Generator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Prefebs/[SYSTEM] Ground Texture Generator.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scenes/StuartTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scenes/StuartTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/GroundTextureGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/GroundTextureGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/DeadState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/DeadState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/PlayerStateMachine.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +22,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275673b392b944eebce45ac4557cce0b3c00/b8/5e0d1386/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3f936d8f1c4c48e083fc500d08667b591fe00/fc/ab8c72bc/Physics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/71de4fccba994d76929255576af20b8cd400/39/ac6c2840/NavMeshData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/735c071c072642ad8d077fa38c650a28173400/6d/53f79060/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ac87b54e58ee4be198261fd5c8030d5293ee00/08/371b849e/EditorWindow.cs" root0="SKIP_HIGHLIGHTING" />
@@ -120,7 +123,7 @@
       <updated>1712389942001</updated>
       <workItem from="1712389948960" duration="2472000" />
       <workItem from="1712392470685" duration="18179000" />
-      <workItem from="1712417070706" duration="10015000" />
+      <workItem from="1712417070706" duration="13725000" />
     </task>
     <servers />
   </component>
@@ -136,17 +139,43 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/GroundTextureGenerator.cs</url>
-          <line>42</line>
-          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\GroundTextureGenerator.cs" initialLine="39" containingFunctionPresentation="Method 'Generate'">
+          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/CleaningScore.cs</url>
+          <line>44</line>
+          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\CleaningScore.cs" initialLine="44" containingFunctionPresentation="Method 'OnDeath'">
             <startOffsets>
-              <option value="1310" />
+              <option value="1298" />
             </startOffsets>
             <endOffsets>
-              <option value="1345" />
+              <option value="1340" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="18" />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/CleaningScore.cs</url>
+          <line>18</line>
+          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\CleaningScore.cs" initialLine="18" containingFunctionPresentation="Method 'Start'">
+            <startOffsets>
+              <option value="401" />
+            </startOffsets>
+            <endOffsets>
+              <option value="470" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/CleaningScore.cs</url>
+          <line>23</line>
+          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\CleaningScore.cs" initialLine="23" containingFunctionPresentation="Method 'OnDeath'">
+            <startOffsets>
+              <option value="504" />
+            </startOffsets>
+            <endOffsets>
+              <option value="583" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
