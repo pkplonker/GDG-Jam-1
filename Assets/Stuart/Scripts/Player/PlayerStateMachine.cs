@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementController : MonoBehaviour
+public class PlayerStateMachine : IStateMachine
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,10 @@ public class MovementController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ChangeState(IState state)
+    {
+        throw new System.NotImplementedException();
     }
 }
