@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3cd1cef-2ea5-4c08-8efa-a1b9dab781dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/TimeController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/TimeController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/Brick Project Studio/Apartment Kit/Materials/Surface/Glass Wine Bottle 05.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/Brick Project Studio/Apartment Kit/Materials/Surface/Glass Wine Bottle 05.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/_Barking_Dog/3D Free Modular Kit/_Meshes/Materials/Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/_Barking_Dog/3D Free Modular Kit/_Meshes/Materials/Glass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Peter/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Peter/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Peter/Scenes/FirstScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Peter/Scenes/FirstScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Stuart/Prefebs/Systems/[SYSTEM] ScoreController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Prefebs/Systems/[SYSTEM] ScoreController.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scenes/StuartTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scenes/StuartTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/CleaningScore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/CleaningScore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/Interaction/ScoreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Interaction/RubbishCollectionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/Interaction/ScoreController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Interaction/RubbishCollectionController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/UI/RubbishCollectionUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/UI/RubbishCollectionUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +126,7 @@
       <workItem from="1712389948960" duration="2472000" />
       <workItem from="1712392470685" duration="18179000" />
       <workItem from="1712417070706" duration="17408000" />
+      <workItem from="1712441766543" duration="1539000" />
     </task>
     <servers />
   </component>
@@ -138,37 +137,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/ScoreManager.cs</url>
-          <line>24</line>
-          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\ScoreManager.cs" initialLine="30" containingFunctionPresentation="Method 'CalculateFinalScore'">
-            <startOffsets>
-              <option value="691" />
-            </startOffsets>
-            <endOffsets>
-              <option value="726" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/ScoreManager.cs</url>
-          <line>16</line>
-          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\ScoreManager.cs" initialLine="16" containingFunctionPresentation="Method 'CalculateFinalScore'">
-            <startOffsets>
-              <option value="371" />
-            </startOffsets>
-            <endOffsets>
-              <option value="541" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

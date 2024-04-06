@@ -22,7 +22,11 @@ public class Charger : MonoBehaviour, IHitTarget
 
 	private void OnTriggerEnter(Collider other)
 	{
-		var battery = other.gameObject.GetComponent<Battery>();
+		var battery = other.gameObject.GetComponentInParent<Battery>();
+		if (battery == null)
+		{
+			throw new NullReferenceException("WTF you doing");
+		}
 		StopCor();
 		StartCor(battery);
 	}
