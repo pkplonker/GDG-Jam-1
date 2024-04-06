@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerMovementState : IState, IMovement
@@ -26,7 +27,7 @@ public class PlayerMovementState : IState, IMovement
 	public void Tick()
 	{
 		var input = InputController.Instance.GetPlayerMovement();
-		if (input.y != 0)
+		if (input.y >0)
 		{
 			var amount = input.y * currentSpeed * Time.deltaTime;
 			transform.position += transform.rotation * new Vector3(0, 0, amount);
