@@ -1,23 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStateMachine : IStateMachine
+public class PlayerStateMachine : StateMachine
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	protected IState movementState;
+	[SerializeField]
+	public MovementStats MovementStats;
+	private void Start()
+	{
+		movementState = new PlayerMovementState();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+		ChangeState(movementState);
+	}
 
-    public void ChangeState(IState state)
-    {
-        throw new System.NotImplementedException();
-    }
+	protected override void Update()
+	{
+		currentState.Tick();
+	}
+
+	public override void ChangeState(IState state)
+	{
+		currentState?.ExitState();
+		currentState = state;
+		currentState.EnterState(this);
+	}
 }

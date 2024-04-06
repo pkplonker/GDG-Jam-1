@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IStateMachine
 {
 	void ChangeState(IState state);
+	public Transform GetTransform();
 }

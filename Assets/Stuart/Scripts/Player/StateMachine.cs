@@ -1,4 +1,6 @@
-public abstract class StateMachine : IStateMachine
+using UnityEngine;
+
+public abstract class StateMachine : MonoBehaviour, IStateMachine
 {
 	protected IState currentState;
 
@@ -13,4 +15,6 @@ public abstract class StateMachine : IStateMachine
 		currentState = state;
 		currentState.EnterState(this);
 	}
+
+	public Transform GetTransform() => transform;
 }
