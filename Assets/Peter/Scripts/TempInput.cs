@@ -18,7 +18,8 @@ public class TempInput : MonoBehaviour
     [SerializeField] GameObject firstPersonCamera;
     [SerializeField] GameObject topDownCamera;
 
-    [SerializeField] float movementSpeed = 1f;
+    [SerializeField] float accelerationSpeed = 1f;
+    [SerializeField] float maxSpeed = 1f;
     [SerializeField] float rotateSpeed = 1f;
 
     private void Awake()
@@ -38,11 +39,18 @@ public class TempInput : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 rot = transform.rotation.eulerAngles;
-        rot.y = rot.y + rotate * rotateSpeed;
+        rot.y = rot.y + movement.x * rotateSpeed;
         transform.rotation = Quaternion.Euler(rot);
 
-        Vector3 rotatedMove = transform.rotation * new Vector3(movement.x, 0, movement.y);
-        rb.velocity = rotatedMove;
+        Vector3 rotatedMove = transform.rotation * new Vector3(0, 0, movement.y);
+        rb.AddForce(rotatedMove.normalized * accelerationSpeed, ForceMode.Force);
+
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z); //gets horixontal velocity
+        if (flatVel.magnitude > maxSpeed) //if horizontal velocity is greater than set speed
+        {
+            Vector3 limitedVel = flatVel.normalized * maxSpeed; //sets velocity ot be max speed
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
     }
 
     private void OnEnable()
@@ -71,7 +79,7 @@ public class TempInput : MonoBehaviour
 
     private void OnMoveKey(InputAction.CallbackContext context)
     {
-        movement = context.ReadValue<Vector2>() * movementSpeed;
+        movement = context.ReadValue<Vector2>();
     }
 
     private void OnMoveCancel(InputAction.CallbackContext context)
