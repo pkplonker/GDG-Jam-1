@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3cd1cef-2ea5-4c08-8efa-a1b9dab781dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scenes/StuartTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scenes/StuartTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/GroundTextureGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/GroundTextureGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +26,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ac87b54e58ee4be198261fd5c8030d5293ee00/09/4b95bdf8/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ac87b54e58ee4be198261fd5c8030d5293ee00/db/a7c6e871/AssetDatabase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c2d036c16ca64e0eb93703a3b13e733a171c00/ca/5fee1d46/LightProbes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c2d036c16ca64e0eb93703a3b13e733a171c00/e1/cb5df8db/Texture2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/BatteryEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/Battery/Battery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/Battery/BatteryController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -116,7 +120,7 @@
       <updated>1712389942001</updated>
       <workItem from="1712389948960" duration="2472000" />
       <workItem from="1712392470685" duration="18179000" />
-      <workItem from="1712417070706" duration="6302000" />
+      <workItem from="1712417070706" duration="10015000" />
     </task>
     <servers />
   </component>
@@ -132,30 +136,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/RuntimeGroundTexture.cs</url>
-          <line>40</line>
-          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\RuntimeGroundTexture.cs" initialLine="40" containingFunctionPresentation="Method 'UpdateTexture'">
+          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/GroundTextureGenerator.cs</url>
+          <line>42</line>
+          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\GroundTextureGenerator.cs" initialLine="39" containingFunctionPresentation="Method 'Generate'">
             <startOffsets>
-              <option value="945" />
+              <option value="1310" />
             </startOffsets>
             <endOffsets>
-              <option value="987" />
+              <option value="1345" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/RuntimeGroundTexture.cs</url>
-          <line>26</line>
-          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\RuntimeGroundTexture.cs" initialLine="26" containingFunctionPresentation="Method 'Start'">
-            <startOffsets>
-              <option value="560" />
-            </startOffsets>
-            <endOffsets>
-              <option value="646" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
