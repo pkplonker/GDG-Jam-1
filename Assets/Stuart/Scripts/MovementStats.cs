@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public struct MovementStats
+[System.Serializable]
+public class MovementStats
 {
-	public float MovementSpeed { get; set; }
-	public float RotationSpeed { get; set; }
+	public float MovementSpeed;
+	public float RotationSpeed;
 }

@@ -6,8 +6,10 @@ using UnityEngine;
 public class PlayerStateMachine : StateMachine
 {
 	protected IState movementState;
+
 	[SerializeField]
 	public MovementStats MovementStats;
+
 	private void Start()
 	{
 		movementState = new PlayerMovementState();
