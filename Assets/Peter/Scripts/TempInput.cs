@@ -39,7 +39,7 @@ public class TempInput : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(transform.up);
+        //Debug.Log(transform.up);
 
         transform.RotateAround(transform.position, transform.up, movement.x * rotateSpeed);
         //Quaternion rot = transform.rotation;
