@@ -4,9 +4,8 @@ using UnityEngine;
 
 public enum VolumeType { GLOBAL, MUSIC, FX }
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : GenericUnitySingleton<AudioManager>
 {
-    public static AudioManager Instance { get; private set; }
     public GlobalSoundList globalSoundList;
 
     [Header("Audio Sources")]
@@ -22,26 +21,10 @@ public class AudioManager : MonoBehaviour
     public float FXVolume { get { return _fxVolume; } }
 
 
-    private void Awake()
+    protected override void Awake()
     {
-        // Singleton Functionality
-        // If there is an instance, and it's not me, delete myself.
-
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-            globalSoundList = GetComponent<GlobalSoundList>();
-
-            if (globalSoundList == null) Debug.LogWarning("No Sound List Present on AudioManager, Please Create One");
-
-
-        }
-
-        DontDestroyOnLoad(gameObject);
+        globalSoundList = GetComponent<GlobalSoundList>();   
+        if (globalSoundList == null) Debug.LogWarning("No Sound List Present on AudioManager, Please Create One");
     }
 
     //Gets called when this script is added to an object
