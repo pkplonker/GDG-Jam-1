@@ -26,6 +26,5 @@ public class PlayerMovementState : IState
 		var input = InputController.Instance.GetPlayerMovement();
 		transform.position += transform.rotation * new Vector3(0, 0, input.y * currentSpeed * Time.deltaTime);
 		transform.RotateAround(transform.position, transform.up, input.x * currentRotationSpeed * Time.deltaTime);
-		Debug.Log(input);
 	}
 }
