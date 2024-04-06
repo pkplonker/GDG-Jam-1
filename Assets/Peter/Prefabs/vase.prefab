@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4844758953898176253}
   - component: {fileID: 8185700891901853823}
   - component: {fileID: 2363714135205032982}
+  - component: {fileID: 4123122469019833995}
   m_Layer: 0
   m_Name: vase
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 4226430316252239070}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8185700891901853823
 MonoBehaviour:
@@ -46,7 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d7fb8defae91e4f8d1d842fc08a0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokenVarient: {fileID: 0}
+  brokenVarient: {fileID: 477186993687664409, guid: 354916155a97c7a46bd3395125ac7211,
+    type: 3}
   breakThreshold: 89
 --- !u!54 &2363714135205032982
 Rigidbody:
@@ -75,6 +77,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &4123122469019833995
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020677571859769598}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!1 &3597420998155587172
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +201,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30

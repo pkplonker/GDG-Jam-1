@@ -21,6 +21,7 @@ public class TempInput : MonoBehaviour
     [SerializeField] float accelerationSpeed = 1f;
     [SerializeField] float maxSpeed = 1f;
     [SerializeField] float rotateSpeed = 1f;
+    [SerializeField] float gravity = 1f;
 
     private void Awake()
     {
@@ -38,19 +39,23 @@ public class TempInput : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 rot = transform.rotation.eulerAngles;
-        rot.y = rot.y + movement.x * rotateSpeed;
-        transform.rotation = Quaternion.Euler(rot);
+        //Debug.Log(transform.up);
+
+        transform.RotateAround(transform.position, transform.up, movement.x * rotateSpeed);
+        //Quaternion rot = transform.rotation;
+        //rot *= Quaternion.Euler(transform.up * movement.x * rotateSpeed);
+        //transform.rotation = rot;
 
         Vector3 rotatedMove = transform.rotation * new Vector3(0, 0, movement.y);
         rb.AddForce(rotatedMove.normalized * accelerationSpeed, ForceMode.Force);
 
-        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z); //gets horixontal velocity
-        if (flatVel.magnitude > maxSpeed) //if horizontal velocity is greater than set speed
+        if (rb.velocity.magnitude > maxSpeed) //if horizontal velocity is greater than set speed
         {
-            Vector3 limitedVel = flatVel.normalized * maxSpeed; //sets velocity ot be max speed
-            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+            Vector3 limitedVel = rb.velocity.normalized * maxSpeed; //sets velocity ot be max speed
+            rb.velocity = new Vector3(limitedVel.x, limitedVel.y, limitedVel.z);
         }
+
+        rb.AddForce(-transform.up * gravity, ForceMode.Force);
     }
 
     private void OnEnable()
@@ -58,9 +63,6 @@ public class TempInput : MonoBehaviour
         input.Enable();
         input.PlayerTest.Movement.performed += OnMoveKey;
         input.PlayerTest.Movement.canceled += OnMoveCancel;
-
-        input.PlayerTest.Rotation.performed += OnRotateKey;
-        input.PlayerTest.Rotation.canceled += OnRotateCancel;
 
         input.PlayerTest.Cameras.performed += OnCameraInput;
     }
@@ -70,9 +72,6 @@ public class TempInput : MonoBehaviour
         input.Disable();
         input.PlayerTest.Movement.performed -= OnMoveKey;
         input.PlayerTest.Movement.canceled -= OnMoveCancel;
-
-        input.PlayerTest.Rotation.performed -= OnRotateKey;
-        input.PlayerTest.Rotation.canceled -= OnRotateCancel;
 
         input.PlayerTest.Cameras.performed -= OnCameraInput;
     }
@@ -85,24 +84,6 @@ public class TempInput : MonoBehaviour
     private void OnMoveCancel(InputAction.CallbackContext context)
     {
         movement = Vector2.zero;
-    }
-
-    private void OnRotateKey(InputAction.CallbackContext context)
-    {
-        switch (context.control.name)
-        {
-            case "q":
-                rotate = -1;
-                break;
-            case "e":
-                rotate = 1;
-                break;
-        }
-    }
-
-    private void OnRotateCancel(InputAction.CallbackContext context)
-    {
-        rotate = 0;
     }
 
     private void OnCameraInput(InputAction.CallbackContext context)
