@@ -12,9 +12,9 @@ public class AudioManager : GenericUnitySingleton<AudioManager>
     [SerializeField] private AudioSource _soundFXSource;
     [SerializeField] private AudioSource _musicSource;
 
-    private float _globalVolume;
-    private float _musicVolume;
-    private float _fxVolume;
+    [SerializeField] private float _globalVolume;
+    [SerializeField] private float _musicVolume;
+    [SerializeField] private float _fxVolume;
 
     public float GlobalVolume { get { return _globalVolume; } }
     public float MusicVolume { get { return _musicVolume; } }
@@ -25,6 +25,10 @@ public class AudioManager : GenericUnitySingleton<AudioManager>
     {
         globalSoundList = GetComponent<GlobalSoundList>();   
         if (globalSoundList == null) Debug.LogWarning("No Sound List Present on AudioManager, Please Create One");
+
+        _globalVolume = 1;
+        _musicVolume = 1;
+        _fxVolume = 1;
     }
 
     //Gets called when this script is added to an object
@@ -57,8 +61,7 @@ public class AudioManager : GenericUnitySingleton<AudioManager>
 
         else 
         {
-            PlaySoundEffect(clip);
-
+            _soundFXSource.PlayOneShot(clip);
         }
 
     }

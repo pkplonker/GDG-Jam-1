@@ -6,6 +6,7 @@ public class UIComponent : MonoBehaviour
 {
 
     public CanvasGroup contentCanvas;
+    public CanvasGroup mainCanvas;
     public bool hideOnAwake;
     public float animationSpeed = 0.5f;
 
@@ -15,19 +16,34 @@ public class UIComponent : MonoBehaviour
         if (hideOnAwake)
         {
             DisplayComponent(this,false,true);
-        } 
+        }
     }
+
+    protected virtual void Start()
+    {
+        SetVals();
+    }
+
 
     public void PlayUIClick()
     {
         AudioManager.Instance.PlaySoundEffect(AudioManager.Instance.globalSoundList.uiclick);
     }
 
-
-    public void DisplayComponent(UIComponent comp, bool isOn,bool overrideAnim)
+    public void Close()
     {
-        comp.contentCanvas.enabled = isOn;
+        DisplayComponent(this,false);
+    }
+    public void DisplayComponent(UIComponent comp, bool isOn,bool overrideAnim = false)
+    {
+        comp.contentCanvas.interactable = isOn;
         comp.contentCanvas.blocksRaycasts = isOn;
+
+
+        if (isOn)
+        {
+            SetVals();
+        }
 
         if (overrideAnim)
         {
@@ -38,6 +54,11 @@ public class UIComponent : MonoBehaviour
         {
             StartCoroutine(AnimationDelay(comp, isOn));
         }
+    }
+
+    protected virtual void SetVals()
+    {
+
     }
 
     protected virtual void BeginInAnimation()
@@ -58,5 +79,10 @@ public class UIComponent : MonoBehaviour
         yield return new WaitForSeconds(animationSpeed);
 
         comp.contentCanvas.alpha = (isOn) ? 1 : 0;
+
+        comp.mainCanvas.interactable = isOn;
+        comp.mainCanvas.blocksRaycasts = isOn;
+        comp.mainCanvas.alpha = (isOn) ? 1 : 0;
+
     }
 }
