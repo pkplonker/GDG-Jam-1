@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3cd1cef-2ea5-4c08-8efa-a1b9dab781dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/Modern Furniture/Materials/CoffeeTable/Mat_CoffeeTable_Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/Modern Furniture/Materials/CoffeeTable/Mat_CoffeeTable_Glass.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/SciFiProps/Material/FloorMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/SciFiProps/Material/FloorMat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/SciFiProps/Material/GlobesphereMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/SciFiProps/Material/GlobesphereMat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/ScifiOfficeLite/Meshes/Materials/Table Texture Set/Table Texture Set 1 V2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/ScifiOfficeLite/Meshes/Materials/Table Texture Set/Table Texture Set 1 V2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/ScifiOfficeLite/Meshes/Materials/Table Texture Set/Table Texture Set 5.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/ScifiOfficeLite/Meshes/Materials/Table Texture Set/Table Texture Set 5.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/ScifiOfficeLite/Meshes/Materials/Table Texture Set/Table set Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/ScifiOfficeLite/Meshes/Materials/Table Texture Set/Table set Glass.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/_Barking_Dog/3D Free Modular Kit/_Meshes/Materials/Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/_Barking_Dog/3D Free Modular Kit/_Meshes/Materials/Glass.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mia/Materials Mia's/Mat_Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Materials Mia's/Mat_Glass.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scenes/StuartTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scenes/StuartTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,11 +16,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275673b392b944eebce45ac4557cce0b3c00/b8/5e0d1386/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/71de4fccba994d76929255576af20b8cd400/39/ac6c2840/NavMeshData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/735c071c072642ad8d077fa38c650a28173400/6d/53f79060/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ac87b54e58ee4be198261fd5c8030d5293ee00/08/371b849e/EditorWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ac87b54e58ee4be198261fd5c8030d5293ee00/09/4b95bdf8/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ac87b54e58ee4be198261fd5c8030d5293ee00/db/a7c6e871/AssetDatabase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c2d036c16ca64e0eb93703a3b13e733a171c00/ca/5fee1d46/LightProbes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/BatteryEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/Battery/Battery.cs" root0="FORCE_HIGHLIGHTING" />
@@ -40,6 +31,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/Player/IMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/Player/State.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/Player/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/RuntimeGroundTexture.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/UI/BatteryUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/UI/RubbishCollectionUI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -124,7 +116,7 @@
       <updated>1712389942001</updated>
       <workItem from="1712389948960" duration="2472000" />
       <workItem from="1712392470685" duration="18179000" />
-      <workItem from="1712417070706" duration="606000" />
+      <workItem from="1712417070706" duration="6302000" />
     </task>
     <servers />
   </component>
@@ -140,18 +132,30 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/GroundTextureGenerator.cs</url>
-          <line>25</line>
-          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\GroundTextureGenerator.cs" initialLine="25" isMultiMethodBreakpoint="true">
-            <option name="multiMethodBreakpoint" value="true" />
+          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/RuntimeGroundTexture.cs</url>
+          <line>40</line>
+          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\RuntimeGroundTexture.cs" initialLine="40" containingFunctionPresentation="Method 'UpdateTexture'">
             <startOffsets>
-              <option value="-1" />
+              <option value="945" />
             </startOffsets>
             <endOffsets>
-              <option value="-1" />
+              <option value="987" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/RuntimeGroundTexture.cs</url>
+          <line>26</line>
+          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\RuntimeGroundTexture.cs" initialLine="26" containingFunctionPresentation="Method 'Start'">
+            <startOffsets>
+              <option value="560" />
+            </startOffsets>
+            <endOffsets>
+              <option value="646" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
