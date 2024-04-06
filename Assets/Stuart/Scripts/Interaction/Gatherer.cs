@@ -8,6 +8,5 @@ public class Gatherer : MonoBehaviour
 	public void Hit(IHitTarget hitTarget)
 	{
 		TargetHit?.Invoke(hitTarget);
-		Debug.Log($"Hit {hitTarget}");
 	}
 }
