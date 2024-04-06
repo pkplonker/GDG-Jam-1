@@ -1,26 +1,40 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStateMachine : StateMachine
 {
-	protected IState movementState;
+	public IState MovementState { get; protected set; }
+	public IState DeadState { get; protected set; }
 
 	[SerializeField]
 	public MovementStats MovementStats;
 
-	private void Start()
-	{
-		movementState = new PlayerMovementState();
+	public static PlayerStateMachine Instance;
+	private Battery battery;
 
-		ChangeState(movementState);
+	private void Awake()
+	{
+		if (Instance == null)
+		{
+			Instance = this;
+		}
+		else if (Instance != this)
+		{
+			Destroy(this);
+		}
+
+		MovementState = new PlayerMovementState();
+		DeadState = new DeadState();
+
+		ChangeState(MovementState);
+		battery = GetComponent<Battery>();
+		battery.BatteryEmpty += OnBatteryEmpty;
 	}
 
-	protected override void Update()
-	{
-		currentState.Tick();
-	}
+	private void OnBatteryEmpty() => ChangeState(DeadState);
+
+	protected override void Update() => currentState.Tick();
 
 	public override void ChangeState(IState state)
 	{

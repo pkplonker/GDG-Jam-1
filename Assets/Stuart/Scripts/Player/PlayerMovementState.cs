@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementState : IState
+public class PlayerMovementState : IState, IMovement
 {
+	public event Action<float> MoveAmount;
+	public event Action<float> RotateAmount;
 	private PlayerStateMachine statemachine;
 	private Transform transform;
 	private float currentRotationSpeedMultiplier = 1f;
@@ -24,7 +26,18 @@ public class PlayerMovementState : IState
 	public void Tick()
 	{
 		var input = InputController.Instance.GetPlayerMovement();
-		transform.position += transform.rotation * new Vector3(0, 0, input.y * currentSpeed * Time.deltaTime);
-		transform.RotateAround(transform.position, transform.up, input.x * currentRotationSpeed * Time.deltaTime);
+		if (input.y != 0)
+		{
+			var amount = input.y * currentSpeed * Time.deltaTime;
+			transform.position += transform.rotation * new Vector3(0, 0, amount);
+			MoveAmount?.Invoke(amount);
+		}
+
+		if (input.x != 0)
+		{
+			var amount = input.x * currentRotationSpeed * Time.deltaTime;
+			transform.RotateAround(transform.position, transform.up, amount);
+			RotateAmount?.Invoke(amount);
+		}
 	}
 }

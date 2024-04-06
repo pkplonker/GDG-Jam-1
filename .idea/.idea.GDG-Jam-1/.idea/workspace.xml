@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3cd1cef-2ea5-4c08-8efa-a1b9dab781dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/GenericUnitySingleton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/GenericUnitySingleton.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Input/Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Input/Input.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Input/Input.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Input/Input.inputactions" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Battery/BatteryStats.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Battery/BatteryStats.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scenes/StuartTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scenes/StuartTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/IStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/IStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/InputController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/PlayerMovementState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/PlayerMovementState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/PlayerStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/StateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/UI/RubbishCollectionUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/UI/RubbishCollectionUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +24,14 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/275673b392b944eebce45ac4557cce0b3c00/b8/5e0d1386/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c2d036c16ca64e0eb93703a3b13e733a171c00/ca/5fee1d46/LightProbes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/Battery/Battery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/Battery/BatteryController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/GenericUnitySingleton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/Player/IMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/Player/State.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/Player/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/UI/BatteryUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/UI/RubbishCollectionUI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -91,10 +93,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="25172">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="5712">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="25172" />
+      <option name="pid" value="5712" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -111,7 +113,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712389942001</updated>
       <workItem from="1712389948960" duration="2472000" />
-      <workItem from="1712392470685" duration="816000" />
+      <workItem from="1712392470685" duration="8223000" />
     </task>
     <servers />
   </component>
@@ -127,17 +129,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/Player/InputController.cs</url>
-          <line>12</line>
-          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\Player\InputController.cs" initialLine="12" containingFunctionPresentation="Method 'Awake'">
+          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/Battery/Battery.cs</url>
+          <line>33</line>
+          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\Battery\Battery.cs" initialLine="33" containingFunctionPresentation="Method 'Start'">
             <startOffsets>
-              <option value="318" />
+              <option value="784" />
             </startOffsets>
             <endOffsets>
-              <option value="347" />
+              <option value="830" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class RubbishCollectionUI : MonoBehaviour
 {
-	[SerializeField]
 	private readonly string defaultText = "Rubbish collected: ";
 
 	[SerializeField]
