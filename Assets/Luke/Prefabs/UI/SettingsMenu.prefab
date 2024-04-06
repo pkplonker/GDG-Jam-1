@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contentCanvas: {fileID: 8771570675221497520}
   mainCanvas: {fileID: 5137808104326975520}
-  hideOnAwake: 0
+  hideOnAwake: 1
   animationSpeed: 0.5
   volumeSFX: {fileID: 1396925417276006483}
   volumeMusic: {fileID: 3943946713205722926}

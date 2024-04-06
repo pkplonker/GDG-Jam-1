@@ -19,6 +19,7 @@ public class PauseMenuBehaviour : UIComponent
 
     public void OnUnPause()
     {
+        PauseController.Instance.IsPaused = false;
         DisplayComponent(this, false);
 
     }

@@ -15,6 +15,7 @@ public class UIComponent : MonoBehaviour
     {
         if (hideOnAwake)
         {
+            Debug.Log("hiding: "+gameObject.name);
             DisplayComponent(this,false,true);
         }
     }
@@ -48,6 +49,10 @@ public class UIComponent : MonoBehaviour
         if (overrideAnim)
         {
             comp.contentCanvas.alpha = (isOn) ? 1 : 0;
+
+            comp.mainCanvas.interactable = isOn;
+            comp.mainCanvas.blocksRaycasts = isOn;
+            comp.mainCanvas.alpha = (isOn) ? 1 : 0;
         }
 
         else

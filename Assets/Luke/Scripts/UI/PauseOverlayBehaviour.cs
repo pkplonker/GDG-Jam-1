@@ -9,6 +9,7 @@ public class PauseOverlayBehaviour : MonoBehaviour
 
     public void OnPause()
     {
+        PauseController.Instance.IsPaused = true;
         pauseMenu.DisplayComponent(pauseMenu, true);
     }
 
