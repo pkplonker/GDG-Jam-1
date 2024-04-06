@@ -15,4 +15,6 @@ public abstract class State : IState
 
 	protected abstract void VirtualStateExit();
 	public abstract void Tick();
+
+	public abstract void FixedTick();
 }

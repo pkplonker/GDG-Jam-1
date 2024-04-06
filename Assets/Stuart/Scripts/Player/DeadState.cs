@@ -19,4 +19,6 @@ public class DeadState : IState
 	{
 		Debug.LogWarning("DEAD!");
 	}
+
+    public void FixedTick() { }
 }

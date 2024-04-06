@@ -15,4 +15,6 @@ public class PlayerChargingState : IState
     public void Tick()
     {
     }
+
+    public void FixedTick() { }
 }

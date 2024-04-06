@@ -9,7 +9,12 @@ public abstract class StateMachine : MonoBehaviour, IStateMachine
 		currentState.Tick();
 	}
 
-	public virtual void ChangeState(IState state)
+    protected virtual void FixedUpdate()
+    {
+        currentState.FixedTick();
+    }
+
+    public virtual void ChangeState(IState state)
 	{
 		currentState?.ExitState();
 		currentState = state;

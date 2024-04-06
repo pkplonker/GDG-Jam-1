@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class PlayerStateMachine : StateMachine
 {
@@ -12,8 +13,14 @@ public class PlayerStateMachine : StateMachine
 	[SerializeField]
 	public MovementStats MovementStats;
 
-	public static PlayerStateMachine Instance;
+    public GameObject thirdPersonCamera;
+    public GameObject firstPersonCamera;
+    public GameObject topDownCamera;
+
+    public static PlayerStateMachine Instance;
 	private Battery battery;
+
+	public PeterTestControls input;
 
 	private void Awake()
 	{
@@ -26,10 +33,11 @@ public class PlayerStateMachine : StateMachine
 			Destroy(this);
 		}
 
-		MovementState = new PlayerMovementState();
+		MovementState = new PlayerMovementState2ElectricBoogaloo();
 		DeadState = new DeadState();
+        input = new PeterTestControls();
 
-		ChangeState(MovementState);
+        ChangeState(MovementState);
 		battery = GetComponent<Battery>();
 		battery.BatteryEmpty += OnBatteryEmpty;
 	}

@@ -21,6 +21,7 @@ public class TempInput : MonoBehaviour
     [SerializeField] float maxSpeed = 1f;
     [SerializeField] float rotateSpeed = 1f;
     [SerializeField] float gravity = 1f;
+    [SerializeField] bool allowBackwards = false;
 
     private void Awake()
     {
@@ -41,6 +42,11 @@ public class TempInput : MonoBehaviour
         //Debug.Log(transform.up);
 
         transform.RotateAround(transform.position, transform.up, movement.y < 0.1f && movement.y > -0.1f ? movement.x * rotateSpeed : movement.y * movement.x * rotateSpeed);
+
+        if (!allowBackwards)
+        {
+            movement.y = Mathf.Clamp(movement.y, 0, 1);
+        }
 
         Vector3 rotatedMove = transform.rotation * new Vector3(0, 0, movement.y);
         rb.AddForce(rotatedMove.normalized * accelerationSpeed, ForceMode.Force);
