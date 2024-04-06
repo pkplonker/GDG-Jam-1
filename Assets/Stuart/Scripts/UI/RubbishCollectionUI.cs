@@ -18,9 +18,9 @@ public class RubbishCollectionUI : MonoBehaviour
 
 	private void Start() => ScoreChanged(0);
 
-	private void OnEnable() => ScoreController.OnScoreChanged += ScoreChanged;
+	private void OnEnable() => RubbishCollectionController.OnScoreChanged += ScoreChanged;
 
 	private void ScoreChanged(int score) => tmp.text = defaultText + score;
 
-	private void OnDisable() => ScoreController.OnScoreChanged -= ScoreChanged;
+	private void OnDisable() => RubbishCollectionController.OnScoreChanged -= ScoreChanged;
 }

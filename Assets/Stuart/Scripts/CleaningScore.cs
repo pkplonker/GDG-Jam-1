@@ -5,27 +5,29 @@ using UnityEngine;
 
 public struct CleaningScoreData
 {
-	public int maxScore;
-	public int actualScore;
-	public float ScorePercentage => ((float) actualScore / (float) maxScore) * 100;
+	public int MaxScore;
+	public int ActualScore;
+	public float ScorePercentage => ((float) ActualScore / (float) MaxScore) * 100;
+	public Texture2D InitialTexture { get; set; }
+	public Texture2D RuntimeTexture { get; set; }
 }
 
-public class CleaningScore : MonoBehaviour
+public class CleaningScore : GenericUnitySingleton<CleaningScore>
 {
+	public CleaningScoreData ScoreData { get; private set; }
 	public static event Action<CleaningScoreData> CleaningScoreGenerated;
 
 	private void Start()
 	{
-		((DeadState) PlayerStateMachine.Instance.DeadState).Death += OnDeath;
+		((DeadState) PlayerStateMachine.Instance.DeadState).Death += OnGameOver;
 	}
 
-	private void OnDeath()
+	public void OnGameOver()
 	{
 		Texture2D initialTexture = GetComponent<GroundTextureGenerator>().savedTexture;
 		Texture2D runtimeTexture = GetComponent<RuntimeGroundTexture>().texture;
 		var width = initialTexture.width;
 		var height = initialTexture.height;
-		var scoreData = new CleaningScoreData();
 		var initialData = initialTexture.GetPixels(0, 0, width, height);
 		var runTimeData = runtimeTexture.GetPixels(0, 0, width, height);
 		int maxScore = 0;
@@ -40,8 +42,14 @@ public class CleaningScore : MonoBehaviour
 			}
 		}
 
-		scoreData.maxScore = maxScore;
-		scoreData.actualScore = actualScore;
-		CleaningScoreGenerated?.Invoke(scoreData);
+		ScoreData = new CleaningScoreData()
+		{
+			MaxScore = maxScore,
+			ActualScore = actualScore,
+			InitialTexture = initialTexture,
+			RuntimeTexture = runtimeTexture
+		};
+
+		CleaningScoreGenerated?.Invoke(ScoreData);
 	}
 }

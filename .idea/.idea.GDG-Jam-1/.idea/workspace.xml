@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3cd1cef-2ea5-4c08-8efa-a1b9dab781dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Prefebs/RubbishTest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Prefebs/RubbishTest.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Prefebs/RubbishTest2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Prefebs/RubbishTest2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Prefebs/[SYSTEM] Ground Texture Generator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Prefebs/[SYSTEM] Ground Texture Generator.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/TimeController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/TimeController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Prefebs/Systems/[SYSTEM] ScoreController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Prefebs/Systems/[SYSTEM] ScoreController.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scenes/StuartTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scenes/StuartTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/DeadState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/DeadState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Player/PlayerStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/CleaningScore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/CleaningScore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/Interaction/ScoreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Interaction/RubbishCollectionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/Interaction/ScoreController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/Interaction/RubbishCollectionController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/UI/RubbishCollectionUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/UI/RubbishCollectionUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +42,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/Player/State.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/Player/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/RuntimeGroundTexture.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/ScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/UI/BatteryUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Stuart/Scripts/UI/RubbishCollectionUI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -102,10 +106,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="33656">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21232">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="33656" />
+      <option name="pid" value="21232" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -123,7 +127,7 @@
       <updated>1712389942001</updated>
       <workItem from="1712389948960" duration="2472000" />
       <workItem from="1712392470685" duration="18179000" />
-      <workItem from="1712417070706" duration="13725000" />
+      <workItem from="1712417070706" duration="17408000" />
     </task>
     <servers />
   </component>
@@ -139,43 +143,30 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/CleaningScore.cs</url>
-          <line>44</line>
-          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\CleaningScore.cs" initialLine="44" containingFunctionPresentation="Method 'OnDeath'">
+          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/ScoreManager.cs</url>
+          <line>24</line>
+          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\ScoreManager.cs" initialLine="30" containingFunctionPresentation="Method 'CalculateFinalScore'">
             <startOffsets>
-              <option value="1298" />
+              <option value="691" />
             </startOffsets>
             <endOffsets>
-              <option value="1340" />
+              <option value="726" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="22" />
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/CleaningScore.cs</url>
-          <line>18</line>
-          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\CleaningScore.cs" initialLine="18" containingFunctionPresentation="Method 'Start'">
+          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/ScoreManager.cs</url>
+          <line>16</line>
+          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\ScoreManager.cs" initialLine="16" containingFunctionPresentation="Method 'CalculateFinalScore'">
             <startOffsets>
-              <option value="401" />
+              <option value="371" />
             </startOffsets>
             <endOffsets>
-              <option value="470" />
+              <option value="541" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/CleaningScore.cs</url>
-          <line>23</line>
-          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\CleaningScore.cs" initialLine="23" containingFunctionPresentation="Method 'OnDeath'">
-            <startOffsets>
-              <option value="504" />
-            </startOffsets>
-            <endOffsets>
-              <option value="583" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="24" />
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
