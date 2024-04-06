@@ -26,7 +26,8 @@ public class Breakable : MonoBehaviour
         Debug.Log("break");
         broken = true;
         gameObject.SetActive(false);
-        Instantiate(brokenVarient, transform.position, transform.rotation);
+        GameObject obj = Instantiate(brokenVarient, transform.position, transform.rotation);
+        obj.transform.localScale = transform.localScale;
         Destroy(gameObject);
     }
 }

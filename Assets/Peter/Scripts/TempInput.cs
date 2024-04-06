@@ -10,7 +10,6 @@ public class TempInput : MonoBehaviour
 
     PeterTestControls input = null;
     Vector2 movement = Vector2.zero;
-    float rotate = 0f;
 
     Rigidbody rb;
 
@@ -41,10 +40,7 @@ public class TempInput : MonoBehaviour
     {
         //Debug.Log(transform.up);
 
-        transform.RotateAround(transform.position, transform.up, movement.x * rotateSpeed);
-        //Quaternion rot = transform.rotation;
-        //rot *= Quaternion.Euler(transform.up * movement.x * rotateSpeed);
-        //transform.rotation = rot;
+        transform.RotateAround(transform.position, transform.up, movement.y < 0.1f && movement.y > -0.1f ? movement.x * rotateSpeed : movement.y * movement.x * rotateSpeed);
 
         Vector3 rotatedMove = transform.rotation * new Vector3(0, 0, movement.y);
         rb.AddForce(rotatedMove.normalized * accelerationSpeed, ForceMode.Force);
