@@ -3,11 +3,15 @@ using System;
 public class ScoreManager : GenericUnitySingleton<ScoreManager>
 {
 	public event Action<ScoreData> FinalScore;
+	public PlayerOverlay overlay;
+
 
 	private void Start()
 	{
 		((DeadState) PlayerStateMachine.Instance.DeadState).Death += OnGameOver;
 		//subscribe to any other "game over" events
+
+		overlay.FinishedGame += OnGameOver;
 	}
 
 	private void OnGameOver() => CalculateFinalScore();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class PlayerOverlay : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class PlayerOverlay : MonoBehaviour
     public Image chargingImage;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI rubbishCounter;
+
+    public event Action FinishedGame;
+
+    public TimeController timeController;
 
     private float prevVal;
 
@@ -19,14 +24,31 @@ public class PlayerOverlay : MonoBehaviour
         chargingImage.gameObject.SetActive(false);
     }
 
+    private void Start()
+    {
+        timeController = ScoreManager.Instance.GetComponent<TimeController>();
+    }
+
     public void OnFinishLevel()
     {
         Debug.Log("Finishing Level");
+        FinishedGame.Invoke();
+
     }
     private void OnEnable()
     {
         PlayerStateMachine.Instance.GetComponent<Battery>().BatteryLevelChanged += OnBatteryChanged;
         RubbishCollectionController.OnScoreChanged += ScoreChanged;
+    }
+
+    private void Update()
+    {
+        var currTime = timeController.elapsedSeconds;
+
+        int minutes = TimeSpan.FromSeconds(currTime).Minutes;
+        int seconds = TimeSpan.FromSeconds(currTime).Seconds;
+
+        timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
     }
 
     private void ScoreChanged(int score)
