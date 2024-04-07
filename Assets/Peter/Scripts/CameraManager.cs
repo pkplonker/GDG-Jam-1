@@ -11,34 +11,52 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private GameObject firstPersonCamera;
     [SerializeField] private GameObject topDownCamera;
     [SerializeField] private GameObject deathCamera;
+
+    [SerializeField] private float deathCamDelay = 1f;
     
     private CameraInput input = null;
 
     private bool paused = false;
     private PauseController pauseController;
+    private DeadState Dstate;
 
     private void Awake()
     {
         input = new CameraInput();
         pauseController = FindObjectOfType<PauseController>();
+        Dstate = (DeadState)PlayerStateMachine.Instance.DeadState;
     }
 
     private void OnEnable()
     {
         input.Enable();
         input.cameraSwap.camera.performed += OnCameraInput;
-        pauseController.PauseChanged += SwapPause;
 
-        ((DeadState)PlayerStateMachine.Instance.DeadState).Death += OnDeath;
+        if (pauseController!= null)
+        {
+            pauseController.PauseChanged += SwapPause;
+        }
+
+        if (Dstate != null)
+        {
+            Dstate.Death += OnDeath;
+        } 
     }
 
     private void OnDisable()
     {
         input.Disable();
         input.cameraSwap.camera.performed -= OnCameraInput;
-        pauseController.PauseChanged -= SwapPause;
 
-        ((DeadState)PlayerStateMachine.Instance.DeadState).Death -= OnDeath;
+        if (pauseController != null)
+        {
+            pauseController.PauseChanged -= SwapPause;
+        }
+
+        if (Dstate != null)
+        {
+            Dstate.Death -= OnDeath;
+        } 
     }
 
     private void SwapPause(bool _paused)
@@ -76,6 +94,11 @@ public class CameraManager : MonoBehaviour
     }
 
     private void OnDeath()
+    {
+        Invoke("ToDeathCam", deathCamDelay);
+    }
+
+    private void ToDeathCam()
     {
         firstPersonCamera.SetActive(false);
         topDownCamera.SetActive(false);
