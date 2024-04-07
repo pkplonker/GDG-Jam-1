@@ -32,7 +32,7 @@ public class GroundTextureGeneratorWindow : EditorWindow
 
 		generator.startPosition = EditorGUILayout.Vector3Field(new GUIContent("Position"), generator.startPosition);
 
-		generator.extents = EditorGUILayout.Vector3Field(new GUIContent("Extents"), generator.extents);
+		generator.extents = EditorGUILayout.Vector2Field(new GUIContent("Extents"), generator.extents);
 		generator.textureSize = EditorGUILayout.Vector2IntField(new GUIContent("TextureSize"), generator.textureSize);
 
 		EditorGUILayout.BeginHorizontal();

@@ -30,7 +30,7 @@ public class RuntimeGroundTexture : MonoBehaviour
 		texture = new Texture2D(textureSize.x, textureSize.y, TextureFormat.RGBAFloat, false);
 		startPos = generator.startPosition - new Vector3(generator.extents.x / 2, 0, generator.extents.y / 2);
 		xIncrement = generator.extents.x / textureSize.x;
-		zIncrement = generator.extents.z / textureSize.y;
+		zIncrement = generator.extents.y / textureSize.y;
 	}
 
 	private void Update()
@@ -47,8 +47,8 @@ public class RuntimeGroundTexture : MonoBehaviour
 		var centreIndex = new Vector2Int(Mathf.FloorToInt(xDelta), Mathf.FloorToInt(yDelta));
 		if (centreIndex.x > textureSize.x || centreIndex.x < 0 || centreIndex.y > textureSize.y ||
 		    centreIndex.y < 0) return;
-		var xStart = Mathf.CeilToInt((targetRadius / xIncrement) / 2);
-		var yStart = Mathf.CeilToInt((targetRadius / xIncrement) / 2);
+		var xStart = Mathf.FloorToInt((targetRadius / xIncrement) / 2);
+		var yStart = Mathf.FloorToInt((targetRadius / xIncrement) / 2);
 
 		for (var x = xStart * -1; x < xStart; x++)
 		{
