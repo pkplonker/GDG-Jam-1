@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3cd1cef-2ea5-4c08-8efa-a1b9dab781dd" name="Changes" comment="" />
+    <list default="true" id="b3cd1cef-2ea5-4c08-8efa-a1b9dab781dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Final/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Final/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/Tv_furniture/Prefabs/Sun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Asset Store Stuff/Tv_furniture/Prefabs/Sun.prefab" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,10 +100,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="43276">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="43276" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -120,7 +123,7 @@
       <workItem from="1712392470685" duration="18179000" />
       <workItem from="1712417070706" duration="17408000" />
       <workItem from="1712441766543" duration="11908000" />
-      <workItem from="1712497067541" duration="2939000" />
+      <workItem from="1712497067541" duration="1773000" />
     </task>
     <servers />
   </component>
@@ -131,5 +134,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Stuart/Scripts/Interaction/RubbishCollectionController.cs</url>
+          <line>27</line>
+          <properties documentPath="S:\Users\pkplo\OneDrive\Documents\UnityProjects\GDG-Jam-1\Assets\Stuart\Scripts\Interaction\RubbishCollectionController.cs" initialLine="27" containingFunctionPresentation="Method 'Start'">
+            <startOffsets>
+              <option value="550" />
+            </startOffsets>
+            <endOffsets>
+              <option value="599" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

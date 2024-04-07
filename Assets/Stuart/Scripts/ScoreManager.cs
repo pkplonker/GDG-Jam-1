@@ -56,7 +56,8 @@ public struct ScoreData
 	public float ElapsedTime { get; set; }
 
 	public int FinalScore => Mathf.FloorToInt(
-		((RubbishGatheredPercentage * CleaningScoreData.ScorePercentage) / DamagedItems) *
+		((RubbishGatheredPercentage * CleaningScoreData.ScorePercentage) /
+		 Mathf.Clamp(DamagedItems, 1, float.MaxValue)) *
 		((60 * 5) - ElapsedTime));
 
 	public int DamagedItems { get; set; }
