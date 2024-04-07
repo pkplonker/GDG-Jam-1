@@ -7,6 +7,7 @@ public class RuntimeGroundTexture : MonoBehaviour
 {
 	[HideInInspector]
 	public Texture2D texture;
+
 	public Vector2Int textureSize { get; set; } = new Vector2Int(1024, 1024);
 
 	[SerializeField]
@@ -19,6 +20,7 @@ public class RuntimeGroundTexture : MonoBehaviour
 	private Vector3 startPos;
 	private float xIncrement;
 	private float zIncrement;
+	private Vector3 deltaCalculatedPos;
 
 	private void Awake()
 	{
@@ -33,6 +35,18 @@ public class RuntimeGroundTexture : MonoBehaviour
 		zIncrement = generator.extents.y / textureSize.y;
 	}
 
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawSphere(startPos, 0.5f);
+		// Gizmos.color = Color.green;
+		// Gizmos.DrawSphere(generator.startPosition, 0.5f);
+		// Gizmos.color = Color.blue;
+		// Gizmos.DrawSphere(target.transform.position, 0.1f);
+		// Gizmos.color = Color.magenta;
+		// Gizmos.DrawSphere(deltaCalculatedPos, 0.5f);
+	}
+
 	private void Update()
 	{
 		UpdateTexture();
@@ -41,22 +55,26 @@ public class RuntimeGroundTexture : MonoBehaviour
 	private void UpdateTexture()
 	{
 		var targetPos = target.transform.position;
-		var distance = targetPos - startPos;
-		var xDelta = distance.x / xIncrement;
-		var yDelta = distance.z / zIncrement;
-		var centreIndex = new Vector2Int(Mathf.FloorToInt(xDelta), Mathf.FloorToInt(yDelta));
-		if (centreIndex.x > textureSize.x || centreIndex.x < 0 || centreIndex.y > textureSize.y ||
-		    centreIndex.y < 0) return;
-		var xStart = Mathf.FloorToInt((targetRadius / xIncrement) / 2);
-		var yStart = Mathf.FloorToInt((targetRadius / xIncrement) / 2);
+		var normalisedPosition = targetPos - startPos;
+		var xDelta = normalisedPosition.x / xIncrement;
+		var yDelta = normalisedPosition.z / zIncrement;
+		var centreIndex = new Vector2Int(Mathf.RoundToInt(xDelta), Mathf.RoundToInt(yDelta));
+		var xStart = Mathf.RoundToInt((targetRadius / xIncrement) / 2);
+		var yStart = Mathf.RoundToInt((targetRadius / zIncrement) / 2);
+
+		deltaCalculatedPos = new Vector3(startPos.x, 0, startPos.z) +
+		                     new Vector3(centreIndex.x * xIncrement, 0, centreIndex.y * zIncrement);
 
 		for (var x = xStart * -1; x < xStart; x++)
 		{
 			for (var y = yStart * -1; y < yStart; y++)
 			{
-				var pos = new Vector2Int(centreIndex.x - xStart + x, centreIndex.y - yStart + y);
-				if (Vector2.Distance(pos, centreIndex) <= targetRadius / xIncrement / 2)
+				var pos = new Vector2Int(centreIndex.x  + x, centreIndex.y + y);
+				if (pos.x > textureSize.x || pos.x < 0 || pos.y > textureSize.y ||
+				    pos.y < 0) continue;
+				if (Vector2.Distance(pos, centreIndex) <= (targetRadius / xIncrement) / 2)
 				{
+				
 					texture.SetPixel(pos.x, pos.y, Color.black);
 				}
 			}

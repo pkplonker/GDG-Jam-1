@@ -6,15 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b3cd1cef-2ea5-4c08-8efa-a1b9dab781dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/GroundTextureGeneratorWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/GroundTextureGeneratorWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mia/Mia's Environment/_Dev Environment/Shader Graph Floor.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Mia's Environment/_Dev Environment/Shader Graph Floor.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mia/Quadrants/Quadrant02_Kitchen 01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Quadrants/Quadrant02_Kitchen 01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mia/Quadrants/Quadrant03_Livingroom 01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Quadrants/Quadrant03_Livingroom 01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mia/Quadrants/Quadrant04_Bedroom 01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Quadrants/Quadrant04_Bedroom 01.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Peter/Scenes/FirstScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Peter/Scenes/FirstScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Materials/Floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Materials/Floor.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/GroundTextureGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/GroundTextureGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/RuntimeGroundTexture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/RuntimeGroundTexture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +124,7 @@
       <workItem from="1712389948960" duration="2472000" />
       <workItem from="1712392470685" duration="18179000" />
       <workItem from="1712417070706" duration="17408000" />
-      <workItem from="1712441766543" duration="7519000" />
+      <workItem from="1712441766543" duration="11908000" />
     </task>
     <servers />
   </component>
