@@ -28,6 +28,5 @@ public class GenericUnitySingleton<T> : MonoBehaviour where T : MonoBehaviour
 		}
 
 		instance = GetComponent<T>();
-		DontDestroyOnLoad(gameObject);
 	}
 }

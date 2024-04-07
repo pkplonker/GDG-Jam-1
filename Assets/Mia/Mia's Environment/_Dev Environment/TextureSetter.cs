@@ -40,8 +40,13 @@ public class TextureSetter : MonoBehaviour
 
         propertyBlock = new MaterialPropertyBlock();
         rendererComponent.GetPropertyBlock(propertyBlock);
+        try
+        {
+            texturePropertyName = shaderGraphMaterial.GetTexture("_MaskCleaner").name;
 
-        texturePropertyName = shaderGraphMaterial.GetTexture("_MaskCleaner").name;
+        }
+        catch { }
+
         var texture = propertyBlock.GetTexture(texturePropertyName);
         tex2Set = texture;
         if (tex2Set != null) 
