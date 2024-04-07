@@ -24,53 +24,37 @@ public class TextureSetter : MonoBehaviour
         if (tex2Fetch == null)
         {
             Debug.LogWarning("Texture to fetch component not found on GameObject: " + gameObject.name);
-        }
-        else
-        {
-            //Debug.Log("Fetched Texture from Scene: " + tex2Fetch.name);
-
-            //Changing the texture
-            //propertyBlock.SetTexture(texturePropertyName, tex2Fetch);
-            //renderer.SetPropertyBlock(propertyBlock);
-
-            //shaderGraphMaterial.SetTexture(texturePropertyName, tex2Fetch);
-        }
-        //tex2Set = tex2Fetch;
+        } //basic debug warning
 
         renderer = GetComponent<Renderer>();         
         if (renderer == null)
         {
             Debug.LogWarning("Renderer component not found on GameObject: " + gameObject.name);
-            return;
-        }
+        } //basic debug warning
 
         shaderGraphMaterial = renderer.material;
         if (shaderGraphMaterial == null)
         {
             Debug.LogWarning("Shader Graph Material not found on GameObject: " + gameObject.name);
-        }
-        //Debug.Log("Shader Graph Material is " + renderer.material);
+        } //basic debug warning
 
         propertyBlock = new MaterialPropertyBlock();
         renderer.GetPropertyBlock(propertyBlock);
+
+        texturePropertyName = shaderGraphMaterial.GetTexture("_MaskCleaner").name;
         var texture = propertyBlock.GetTexture(texturePropertyName);
         tex2Set = texture;
-        
-        texturePropertyName = shaderGraphMaterial.GetTexture("_MaskCleaner").name;
-        //tex2Set = renderer.material.GetTexture(texturePropertyName);
-        //texturePropertyID = Shader.PropertyToID("_MaskCleaner");       
-        if (tex2Set != null)
+        if (tex2Set != null) 
         {
             Debug.Log("Fetched Texture2D: " + tex2Set.name);
-            //Debug.Log("Fetched texturePropertyID: " + texturePropertyID);
                         
             //Changing the texture
             propertyBlock.SetTexture(propertyBlock.GetTexture(texturePropertyName).name, tex2Fetch);
             renderer.SetPropertyBlock(propertyBlock);
         } else
         {
-            Debug.LogWarning("Texture with the name '" + texturePropertyName + "' not found in the shader on the GameObject " + gameObject.name);            
-        }
+            Debug.LogWarning("Texture with the name '" + texturePropertyName + "' not found in the shader on the GameObject " + gameObject.name);
+        } //basic debug warning
     }
 
     void Update()
@@ -80,7 +64,7 @@ public class TextureSetter : MonoBehaviour
         if (tex2Fetch == null)
         {
             Debug.LogWarning("Texture to fetch component not found on GameObject: " + gameObject.name);
-        }
+        } //basic debug warning
 
         if (tex2Fetch != null && renderer != null)
         {
@@ -91,16 +75,9 @@ public class TextureSetter : MonoBehaviour
             shaderGraphMaterial.SetTexture(0, tex2Fetch);
         }
 
-        if (shaderGraphMaterial != null && tex2Fetch != null)
-        {
-            //this one doesn't work
-            //shaderGraphMaterial.SetTexture(texturePropertyName, tex2Fetch);
-            //Debug.Log("Trying to set the texture on a Shader Graph"); //We do get to this part
-            //shaderGraphMaterial.mainTexture = tex2Set;                     
-        }
         else if (shaderGraphMaterial == null)
         {
-            //Debug.LogWarning("Shader Graph Material not found on GameObject: " + gameObject.name);
-        }
+            Debug.LogWarning("Shader Graph Material not found on GameObject: " + gameObject.name);
+        } //basic debug warning
     }
 }
