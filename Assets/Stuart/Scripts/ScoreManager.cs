@@ -5,6 +5,7 @@ public class ScoreManager : GenericUnitySingleton<ScoreManager>
 {
 	public event Action<ScoreData> FinalScore;
 	public PlayerOverlay overlay;
+	public EndOfRoundDisplayBehaviour endOfRoundDisplayBehaviour;
 	public ScoreData FinalScoreData;
 	private int objectsBroken;
 
@@ -35,6 +36,7 @@ public class ScoreManager : GenericUnitySingleton<ScoreManager>
 		FinalScoreData.CleaningScoreData = CleaningScore.Instance.ScoreData;
 		FinalScoreData.DamagedItems = objectsBroken;
 		FinalScore?.Invoke(FinalScoreData);
+		endOfRoundDisplayBehaviour.DisplayComponent(endOfRoundDisplayBehaviour, true);
 	}
 
 	private void OnDisable()
