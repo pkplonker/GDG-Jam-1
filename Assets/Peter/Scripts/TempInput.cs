@@ -66,7 +66,7 @@ public class TempInput : MonoBehaviour
         input.PlayerTest.Movement.performed += OnMoveKey;
         input.PlayerTest.Movement.canceled += OnMoveCancel;
 
-        input.PlayerTest.Cameras.performed += OnCameraInput;
+        //input.PlayerTest.Cameras.performed += OnCameraInput;
     }
 
     private void OnDisable()
@@ -75,7 +75,7 @@ public class TempInput : MonoBehaviour
         input.PlayerTest.Movement.performed -= OnMoveKey;
         input.PlayerTest.Movement.canceled -= OnMoveCancel;
 
-        input.PlayerTest.Cameras.performed -= OnCameraInput;
+        //input.PlayerTest.Cameras.performed -= OnCameraInput;
     }
 
     private void OnMoveKey(InputAction.CallbackContext context)

@@ -9,7 +9,7 @@ public class TextureSetter : MonoBehaviour
     public GroundTextureGenerator GroundTextureGeneratorScript;
 
     public Material shaderGraphMaterial;
-    private Renderer renderer;
+    private Renderer rendererComponent;
     public string texturePropertyName = "_MaskCleaner";
     public MaterialPropertyBlock propertyBlock;
 
@@ -26,20 +26,20 @@ public class TextureSetter : MonoBehaviour
             Debug.LogWarning("Texture to fetch component not found on GameObject: " + gameObject.name);
         } //basic debug warning
 
-        renderer = GetComponent<Renderer>();         
-        if (renderer == null)
+        rendererComponent = GetComponent<Renderer>();         
+        if (rendererComponent == null)
         {
             Debug.LogWarning("Renderer component not found on GameObject: " + gameObject.name);
         } //basic debug warning
 
-        shaderGraphMaterial = renderer.material;
+        shaderGraphMaterial = rendererComponent.material;
         if (shaderGraphMaterial == null)
         {
             Debug.LogWarning("Shader Graph Material not found on GameObject: " + gameObject.name);
         } //basic debug warning
 
         propertyBlock = new MaterialPropertyBlock();
-        renderer.GetPropertyBlock(propertyBlock);
+        rendererComponent.GetPropertyBlock(propertyBlock);
 
         texturePropertyName = shaderGraphMaterial.GetTexture("_MaskCleaner").name;
         var texture = propertyBlock.GetTexture(texturePropertyName);
@@ -50,7 +50,7 @@ public class TextureSetter : MonoBehaviour
                         
             //Changing the texture
             propertyBlock.SetTexture(propertyBlock.GetTexture(texturePropertyName).name, tex2Fetch);
-            renderer.SetPropertyBlock(propertyBlock);
+            rendererComponent.SetPropertyBlock(propertyBlock);
         } else
         {
             Debug.LogWarning("Texture with the name '" + texturePropertyName + "' not found in the shader on the GameObject " + gameObject.name);
@@ -66,11 +66,11 @@ public class TextureSetter : MonoBehaviour
             Debug.LogWarning("Texture to fetch component not found on GameObject: " + gameObject.name);
         } //basic debug warning
 
-        if (tex2Fetch != null && renderer != null)
+        if (tex2Fetch != null && rendererComponent != null)
         {
             //Changing the texture
             propertyBlock.SetTexture(texturePropertyName, tex2Fetch);
-            renderer.SetPropertyBlock(propertyBlock);
+            rendererComponent.SetPropertyBlock(propertyBlock);
 
             shaderGraphMaterial.SetTexture(0, tex2Fetch);
         }

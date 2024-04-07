@@ -1,0 +1,56 @@
+{
+    "name": "CameraInput",
+    "maps": [
+        {
+            "name": "cameraSwap",
+            "id": "2bda8f70-93a8-48da-8841-112b565c1cb4",
+            "actions": [
+                {
+                    "name": "camera",
+                    "type": "Value",
+                    "id": "3fa8e127-3428-4d66-b0a3-578be351052e",
+                    "expectedControlType": "Key",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6338d07f-9e7e-482f-85cd-6ef159fc0ddd",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "924b1fe2-455b-4119-980a-50916ee9cb24",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c1e83d9-eae4-4edf-92d7-cf3d7fb13cde",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
