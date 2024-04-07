@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b3cd1cef-2ea5-4c08-8efa-a1b9dab781dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDG-Jam-1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Final/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Final/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Luke/Scripts/UI/Menus/EndOfRoundDisplayBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Luke/Scripts/UI/Menus/EndOfRoundDisplayBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mia/Mia's Environment/_Dev Environment/VFX stuff/VFX Prefabs/VFX_Explosion01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mia/Mia's Environment/_Dev Environment/VFX stuff/VFX Prefabs/VFX_Explosion01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Peter/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Peter/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/ScoreManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Luke/Fonts/exo-2-0/OFT/Exo2.0-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Luke/Fonts/exo-2-0/OFT/Exo2.0-Regular SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
