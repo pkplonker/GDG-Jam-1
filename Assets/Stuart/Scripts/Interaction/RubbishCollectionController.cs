@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RubbishCollectionController : GenericUnitySingleton<RubbishCollectionController>
+public class RubbishCollectionController : MonoBehaviour
 {
 	public static event Action<int> OnScoreChanged;
 	private int rubbishGathered;

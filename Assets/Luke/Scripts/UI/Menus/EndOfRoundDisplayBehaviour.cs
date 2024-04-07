@@ -18,10 +18,18 @@ public class EndOfRoundDisplayBehaviour : UIComponent
 	public TextMeshProUGUI finalGradeText;
 
 	public List<Image> stars;
+	private ScoreManager scoreManager;
+
+	protected override void Start()
+	{
+		scoreManager = FindObjectOfType<ScoreManager>();
+
+		base.Start();
+	}
 
 	protected override void SetVals()
 	{
-		ScoreData scores = ScoreManager.Instance.FinalScoreData;
+		ScoreData scores = scoreManager.FinalScoreData;
 
 		if (scores != null)
 		{

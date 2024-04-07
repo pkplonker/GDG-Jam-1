@@ -15,17 +15,19 @@ public class CameraManager : MonoBehaviour
     private CameraInput input = null;
 
     private bool paused = false;
+    private PauseController pauseController;
 
     private void Awake()
     {
         input = new CameraInput();
+        pauseController = FindObjectOfType<PauseController>();
     }
 
     private void OnEnable()
     {
         input.Enable();
         input.cameraSwap.camera.performed += OnCameraInput;
-        PauseController.Instance.PauseChanged += SwapPause;
+        pauseController.PauseChanged += SwapPause;
 
         ((DeadState)PlayerStateMachine.Instance.DeadState).Death += OnDeath;
     }
@@ -34,7 +36,7 @@ public class CameraManager : MonoBehaviour
     {
         input.Disable();
         input.cameraSwap.camera.performed -= OnCameraInput;
-        PauseController.Instance.PauseChanged -= SwapPause;
+        pauseController.PauseChanged -= SwapPause;
 
         ((DeadState)PlayerStateMachine.Instance.DeadState).Death -= OnDeath;
     }

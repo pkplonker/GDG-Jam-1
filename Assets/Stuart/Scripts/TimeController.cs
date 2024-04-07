@@ -1,20 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-public class TimeController : GenericUnitySingleton<TimeController>
+public class TimeController : MonoBehaviour
 {
 	public float elapsedSeconds { get; private set; }
 	private bool doUpdate;
+	private PauseController pauseController;
 
 	private void Start()
 	{
 		StartTimer();
-		PauseController.Instance.PauseChanged += PauseControllerOnPauseChanged;
+		pauseController = FindObjectOfType<PauseController>();
+		pauseController.PauseChanged += PauseControllerOnPauseChanged;
 	}
 
 	private void OnDisable()
 	{
-		PauseController.Instance.PauseChanged -= PauseControllerOnPauseChanged;
+		pauseController.PauseChanged -= PauseControllerOnPauseChanged;
 	}
 
 	private void PauseControllerOnPauseChanged(bool obj)

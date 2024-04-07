@@ -14,10 +14,12 @@ public class Charger : MonoBehaviour, IHitTarget
 
 	public static event Action ChargeEnded;
 	private WaitForSeconds wait;
+	private PauseController pauseController;
 
 	private void Start()
 	{
 		wait = new WaitForSeconds(chargeFrequency);
+		pauseController = FindObjectOfType<PauseController>();
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -60,7 +62,7 @@ public class Charger : MonoBehaviour, IHitTarget
 				break;
 			}
 
-			if (!PauseController.Instance.IsPaused) battery.Charge(chargeAmount);
+			if (!pauseController.IsPaused) battery.Charge(chargeAmount);
 
 			yield return wait;
 		}

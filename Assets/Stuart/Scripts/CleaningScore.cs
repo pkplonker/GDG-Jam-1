@@ -13,7 +13,7 @@ public class CleaningScoreData
 	public Texture2D RuntimeTexture { get; set; }
 }
 
-public class CleaningScore : GenericUnitySingleton<CleaningScore>
+public class CleaningScore : MonoBehaviour
 {
 	public CleaningScoreData ScoreData { get; private set; }
 	public static event Action<CleaningScoreData> CleaningScoreGenerated;

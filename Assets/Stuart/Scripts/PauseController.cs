@@ -1,6 +1,7 @@
 ﻿using System;
+using UnityEngine;
 
-public class PauseController : GenericUnitySingleton<PauseController>
+public class PauseController : MonoBehaviour
 {
 	public event Action<bool> PauseChanged;
 

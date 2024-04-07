@@ -17,16 +17,18 @@ public class PlayerOverlay : MonoBehaviour
     public TimeController timeController;
 
     private float prevVal;
+    private ScoreManager scoreManager;
 
     private void Awake()
     {
         prevVal = 1;
         chargingImage.gameObject.SetActive(false);
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     private void Start()
     {
-        timeController = ScoreManager.Instance.GetComponent<TimeController>();
+        timeController = scoreManager.GetComponent<TimeController>();
     }
 
     public void OnFinishLevel()

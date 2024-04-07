@@ -42,32 +42,29 @@ public class PlayerMovementState2ElectricBoogaloo : IState, IMovement
 
 	public void FixedTick()
 	{
-		if (!PauseController.Instance.IsPaused)
+		//Debug.Log(transform.up);
+
+		transform.RotateAround(transform.position, transform.up,
+			movement.y < 0.1f && movement.y > -0.1f
+				? movement.x * statemachine.MovementStats.rotateSpeed
+				: movement.y * movement.x * statemachine.MovementStats.rotateSpeed);
+		if (movement.x != 0f) RotateAmount.Invoke(movement.x);
+
+		if (!statemachine.MovementStats.allowBackwards)
 		{
-			//Debug.Log(transform.up);
+			movement.y = Mathf.Clamp(movement.y, 0, 1);
+		}
 
-			transform.RotateAround(transform.position, transform.up,
-				movement.y < 0.1f && movement.y > -0.1f
-					? movement.x * statemachine.MovementStats.rotateSpeed
-					: movement.y * movement.x * statemachine.MovementStats.rotateSpeed);
-			if (movement.x != 0f) RotateAmount.Invoke(movement.x);
+		Vector3 rotatedMove = transform.rotation * new Vector3(0, 0, movement.y);
+		rb.AddForce(rotatedMove.normalized * statemachine.MovementStats.accelerationSpeed, ForceMode.Force);
+		if (movement.y != 0f) MoveAmount.Invoke(movement.y);
 
-			if (!statemachine.MovementStats.allowBackwards)
-			{
-				movement.y = Mathf.Clamp(movement.y, 0, 1);
-			}
-
-			Vector3 rotatedMove = transform.rotation * new Vector3(0, 0, movement.y);
-			rb.AddForce(rotatedMove.normalized * statemachine.MovementStats.accelerationSpeed, ForceMode.Force);
-			if (movement.y != 0f) MoveAmount.Invoke(movement.y);
-
-			if (rb.velocity.magnitude >
-			    statemachine.MovementStats.maxSpeed) //if horizontal velocity is greater than set speed
-			{
-				Vector3 limitedVel =
-					rb.velocity.normalized * statemachine.MovementStats.maxSpeed; //sets velocity ot be max speed
-				rb.velocity = new Vector3(limitedVel.x, limitedVel.y, limitedVel.z);
-			}
+		if (rb.velocity.magnitude >
+		    statemachine.MovementStats.maxSpeed) //if horizontal velocity is greater than set speed
+		{
+			Vector3 limitedVel =
+				rb.velocity.normalized * statemachine.MovementStats.maxSpeed; //sets velocity ot be max speed
+			rb.velocity = new Vector3(limitedVel.x, limitedVel.y, limitedVel.z);
 		}
 
 		rb.AddForce(-transform.up * statemachine.MovementStats.gravity, ForceMode.Force);

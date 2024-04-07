@@ -6,20 +6,19 @@ using UnityEngine;
 public class DisableCameraMovement : MonoBehaviour
 {
     CinemachineFreeLook freeCamera;
+    private PauseController pauseController;
 
     void Start()
     {
         freeCamera = gameObject.GetComponent<CinemachineFreeLook>();
-    }
+        pauseController = FindObjectOfType<PauseController>();
+        pauseController.PauseChanged += SwapCameraMove;
 
-    private void OnEnable()
-    {
-        PauseController.Instance.PauseChanged += SwapCameraMove;
     }
 
     private void OnDisable()
     {
-        PauseController.Instance.PauseChanged -= SwapCameraMove;
+        pauseController.PauseChanged -= SwapCameraMove;
     }
 
     private void SwapCameraMove(bool paused)

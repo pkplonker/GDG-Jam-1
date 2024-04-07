@@ -6,7 +6,13 @@ using UnityEngine.SceneManagement;
 public class PauseMenuBehaviour : UIComponent
 {
     public SettingsMenuBehaviour settingsMenu;
+    private PauseController pauseController;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        pauseController = FindObjectOfType<PauseController>();
+    }
 
     public void OnSettings()
     {
@@ -22,7 +28,7 @@ public class PauseMenuBehaviour : UIComponent
 
     public void OnUnPause()
     {
-        PauseController.Instance.IsPaused = false;
+        pauseController.IsPaused = false;
         DisplayComponent(this, false);
 
     }

@@ -1,13 +1,17 @@
 using System;
 using UnityEngine;
 
-public class ScoreManager : GenericUnitySingleton<ScoreManager>
+public class ScoreManager : MonoBehaviour
 {
 	public event Action<ScoreData> FinalScore;
 	public PlayerOverlay overlay;
 	public EndOfRoundDisplayBehaviour endOfRoundDisplayBehaviour;
 	public ScoreData FinalScoreData;
 	private int objectsBroken;
+	private PauseController pauseController;
+	private RubbishCollectionController rubbishCollectionController;
+	private TimeController timeController;
+	private CleaningScore cleaningScore;
 
 	private void Start()
 	{
@@ -15,6 +19,10 @@ public class ScoreManager : GenericUnitySingleton<ScoreManager>
 		//subscribe to any other "game over" events
 		overlay.FinishedGame += OnGameOver;
 		Breakable.ObjectBroken += OnObjectBroken;
+		pauseController = FindObjectOfType<PauseController>();
+		rubbishCollectionController = FindObjectOfType<RubbishCollectionController>();
+		timeController = FindObjectOfType<TimeController>();
+		cleaningScore = FindObjectOfType<CleaningScore>();
 	}
 
 	private void OnObjectBroken()
@@ -26,15 +34,15 @@ public class ScoreManager : GenericUnitySingleton<ScoreManager>
 
 	private void CalculateFinalScore()
 	{
-		PauseController.Instance.IsPaused = true;
+		pauseController.IsPaused = true;
 		FinalScoreData = new ScoreData
 		{
-			RubbishGathered = RubbishCollectionController.Instance.RubbishGathered,
-			MaxRubbish = RubbishCollectionController.Instance.MaxRubbish,
-			ElapsedTime = TimeController.Instance.elapsedSeconds
+			RubbishGathered = rubbishCollectionController.RubbishGathered,
+			MaxRubbish = rubbishCollectionController.MaxRubbish,
+			ElapsedTime = timeController.elapsedSeconds
 		};
-		CleaningScore.Instance.OnGameOver();
-		FinalScoreData.CleaningScoreData = CleaningScore.Instance.ScoreData;
+		cleaningScore.OnGameOver();
+		FinalScoreData.CleaningScoreData = cleaningScore.ScoreData;
 		FinalScoreData.DamagedItems = objectsBroken;
 		FinalScoreData.CompleteData = true;
 		FinalScore?.Invoke(FinalScoreData);

@@ -1,20 +1,27 @@
+using System;
 using UnityEngine;
 
 public abstract class StateMachine : MonoBehaviour, IStateMachine
 {
 	protected IState currentState;
+	private PauseController pauseController;
+
+	private void Start()
+	{
+		pauseController = FindObjectOfType<PauseController>();
+	}
 
 	protected virtual void Update()
 	{
-		currentState.Tick();
+		if (!pauseController.IsPaused) currentState.Tick();
 	}
 
-    protected virtual void FixedUpdate()
-    {
-        currentState.FixedTick();
-    }
+	protected virtual void FixedUpdate()
+	{
+		if (!pauseController.IsPaused) currentState.FixedTick();
+	}
 
-    public virtual void ChangeState(IState state)
+	public virtual void ChangeState(IState state)
 	{
 		currentState?.ExitState();
 		currentState = state;
