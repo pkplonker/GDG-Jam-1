@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenuBehaviour : UIComponent
 {
@@ -23,6 +24,7 @@ public class MainMenuBehaviour : UIComponent
     public void OnStartGame()
     {
         Debug.Log("Starting Game");
+        SceneManager.LoadScene("FirstScene");
     }
 
     public void OnSettings()

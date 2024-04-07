@@ -12,7 +12,7 @@ public class SettingsMenuBehaviour : UIComponent
 
     protected override void SetVals()
     {
-        Debug.Log("Setting Vals");
+        //Debug.Log("Setting Vals");
 
         volumeAll.SetValueWithoutNotify(AudioManager.Instance.GlobalVolume);
         volumeMusic.SetValueWithoutNotify(AudioManager.Instance.MusicVolume);

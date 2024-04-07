@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuBehaviour : UIComponent
 {
@@ -15,6 +16,8 @@ public class PauseMenuBehaviour : UIComponent
     public void OnReturnToMenu()
     {
         Debug.Log("Returning to Main");
+        SceneManager.LoadScene("MainMenu");
+
     }
 
     public void OnUnPause()
