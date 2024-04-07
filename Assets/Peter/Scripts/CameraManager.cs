@@ -17,14 +17,17 @@ public class CameraManager : MonoBehaviour
     private CameraInput input = null;
 
     private bool paused = false;
-    private PauseController pauseController;
-    private DeadState Dstate;
+    private PauseController pauseController = null;
+    private DeadState Dstate = null;
 
     private void Awake()
     {
         input = new CameraInput();
         pauseController = FindObjectOfType<PauseController>();
-        Dstate = (DeadState)PlayerStateMachine.Instance.DeadState;
+        if (PlayerStateMachine.Instance != null)
+        {
+            Dstate = (DeadState)PlayerStateMachine.Instance.DeadState;
+        }
     }
 
     private void OnEnable()
