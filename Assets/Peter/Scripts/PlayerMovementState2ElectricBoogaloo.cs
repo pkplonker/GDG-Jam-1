@@ -29,8 +29,6 @@ public class PlayerMovementState2ElectricBoogaloo : IState, IMovement
 		input.Enable();
 		input.PlayerTest.Movement.performed += OnMoveKey;
 		input.PlayerTest.Movement.canceled += OnMoveCancel;
-
-		input.PlayerTest.Cameras.performed += OnCameraInput;
 	}
 
 	public void ExitState()
@@ -38,8 +36,6 @@ public class PlayerMovementState2ElectricBoogaloo : IState, IMovement
 		input.Disable();
 		input.PlayerTest.Movement.performed -= OnMoveKey;
 		input.PlayerTest.Movement.canceled -= OnMoveCancel;
-
-		input.PlayerTest.Cameras.performed -= OnCameraInput;
 	}
 
 	public void Tick() { }
@@ -85,27 +81,5 @@ public class PlayerMovementState2ElectricBoogaloo : IState, IMovement
 	private void OnMoveCancel(InputAction.CallbackContext context)
 	{
 		movement = Vector2.zero;
-	}
-
-	private void OnCameraInput(InputAction.CallbackContext context)
-	{
-		switch (context.control.name)
-		{
-			case "1":
-				statemachine.firstPersonCamera.SetActive(true);
-				statemachine.topDownCamera.SetActive(false);
-				statemachine.thirdPersonCamera.SetActive(false);
-				break;
-			case "2":
-				statemachine.firstPersonCamera.SetActive(false);
-				statemachine.topDownCamera.SetActive(true);
-				statemachine.thirdPersonCamera.SetActive(false);
-				break;
-			case "3":
-				statemachine.firstPersonCamera.SetActive(false);
-				statemachine.topDownCamera.SetActive(false);
-				statemachine.thirdPersonCamera.SetActive(true);
-				break;
-		}
 	}
 }
