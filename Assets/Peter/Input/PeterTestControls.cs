@@ -35,24 +35,6 @@ public partial class @PeterTestControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Cameras"",
-                    ""type"": ""Value"",
-                    ""id"": ""26dc9222-f81f-4374-b85c-5bbb473b9441"",
-                    ""expectedControlType"": ""Key"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Rotation"",
-                    ""type"": ""Value"",
-                    ""id"": ""a020ec10-dc36-4ad5-8d53-545f698bbcaa"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -110,61 +92,6 @@ public partial class @PeterTestControls: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c9fdf872-8096-4e65-bcc7-92089e7a34c7"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Cameras"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""78f1de7f-4c82-401d-ba13-f9434aa5ca7f"",
-                    ""path"": ""<Keyboard>/2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Cameras"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""756a2888-8cc2-4816-a69f-aeecedd26ced"",
-                    ""path"": ""<Keyboard>/3"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Cameras"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8265da45-5223-4517-a5e5-be2d602e4fef"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""aa3faa13-7ba8-4783-8555-76d0bbdc30cc"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -174,8 +101,6 @@ public partial class @PeterTestControls: IInputActionCollection2, IDisposable
         // PlayerTest
         m_PlayerTest = asset.FindActionMap("PlayerTest", throwIfNotFound: true);
         m_PlayerTest_Movement = m_PlayerTest.FindAction("Movement", throwIfNotFound: true);
-        m_PlayerTest_Cameras = m_PlayerTest.FindAction("Cameras", throwIfNotFound: true);
-        m_PlayerTest_Rotation = m_PlayerTest.FindAction("Rotation", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -238,15 +163,11 @@ public partial class @PeterTestControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerTest;
     private List<IPlayerTestActions> m_PlayerTestActionsCallbackInterfaces = new List<IPlayerTestActions>();
     private readonly InputAction m_PlayerTest_Movement;
-    private readonly InputAction m_PlayerTest_Cameras;
-    private readonly InputAction m_PlayerTest_Rotation;
     public struct PlayerTestActions
     {
         private @PeterTestControls m_Wrapper;
         public PlayerTestActions(@PeterTestControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_PlayerTest_Movement;
-        public InputAction @Cameras => m_Wrapper.m_PlayerTest_Cameras;
-        public InputAction @Rotation => m_Wrapper.m_PlayerTest_Rotation;
         public InputActionMap Get() { return m_Wrapper.m_PlayerTest; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -259,12 +180,6 @@ public partial class @PeterTestControls: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
-            @Cameras.started += instance.OnCameras;
-            @Cameras.performed += instance.OnCameras;
-            @Cameras.canceled += instance.OnCameras;
-            @Rotation.started += instance.OnRotation;
-            @Rotation.performed += instance.OnRotation;
-            @Rotation.canceled += instance.OnRotation;
         }
 
         private void UnregisterCallbacks(IPlayerTestActions instance)
@@ -272,12 +187,6 @@ public partial class @PeterTestControls: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
-            @Cameras.started -= instance.OnCameras;
-            @Cameras.performed -= instance.OnCameras;
-            @Cameras.canceled -= instance.OnCameras;
-            @Rotation.started -= instance.OnRotation;
-            @Rotation.performed -= instance.OnRotation;
-            @Rotation.canceled -= instance.OnRotation;
         }
 
         public void RemoveCallbacks(IPlayerTestActions instance)
@@ -298,7 +207,5 @@ public partial class @PeterTestControls: IInputActionCollection2, IDisposable
     public interface IPlayerTestActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnCameras(InputAction.CallbackContext context);
-        void OnRotation(InputAction.CallbackContext context);
     }
 }
