@@ -47,28 +47,25 @@ public class EndOfRoundDisplayBehaviour : UIComponent
 			var texture = scores.CleaningScoreData.RuntimeTexture;
 
 			traversalMap.texture = texture;
+
+			//Set Final Grade
+
+			int finalStars = 1;
+			float finalScore = scores.FinalScore;
+			if (finalScore < 2000) finalStars = 1;
+			else if (finalScore >= 2000 && finalScore < 4000) finalStars = 2;
+			else if (finalScore >= 4000 && finalScore < 6000) finalStars = 3;
+			else if (finalScore >= 6000 && finalScore < 8000) finalStars = 4;
+			else if (finalScore >= 8000) finalStars = 5;
+			for (int i = 0; i < finalStars; i++)
+			{
+				stars[i].gameObject.SetActive(true);
+			}
 		}
 
-		//Set Final Grade
-
-		int finalStars = 1;
-		float finalScore = scores.FinalScore;
-		if (finalScore < 2000) finalStars = 1;
-		else if (finalScore >= 2000 && finalScore < 4000) finalStars = 2;
-		else if (finalScore >= 4000 && finalScore < 6000) finalStars = 3;
-		else if (finalScore >= 6000 && finalScore < 8000) finalStars = 4;
-		else if (finalScore >= 8000) finalStars = 5;
-
-
-		for (int i = 0; i<stars.Count;i++)
-        {
-			stars[i].gameObject.SetActive(false);
-        }
-
-
-		for (int i = 0; i < finalStars; i++)
+		for (int i = 0; i < stars.Count; i++)
 		{
-			stars[i].gameObject.SetActive(true);
+			stars[i].gameObject.SetActive(false);
 		}
 
 		if (SceneManager.GetActiveScene().name == "Level2")
