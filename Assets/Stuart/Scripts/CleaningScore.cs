@@ -5,9 +5,10 @@ using UnityEngine;
 
 public struct CleaningScoreData
 {
+	private const float fudgeFactor = 0.7f;
 	public int MaxScore;
 	public int ActualScore;
-	public float ScorePercentage => ((float) ActualScore / (float) MaxScore) * 100;
+	public float ScorePercentage => Mathf.Clamp01(((float) ActualScore / ((float) MaxScore * fudgeFactor))) * 100;
 	public Texture2D InitialTexture { get; set; }
 	public Texture2D RuntimeTexture { get; set; }
 }

@@ -5,7 +5,6 @@ public class ScoreManager : GenericUnitySingleton<ScoreManager>
 	public event Action<ScoreData> FinalScore;
 	public PlayerOverlay overlay;
 
-
 	private void Start()
 	{
 		((DeadState) PlayerStateMachine.Instance.DeadState).Death += OnGameOver;
