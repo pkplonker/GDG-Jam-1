@@ -29,8 +29,9 @@ public class CleaningScore : GenericUnitySingleton<CleaningScore>
 		Texture2D runtimeTexture = GetComponent<RuntimeGroundTexture>().texture;
 		var width = initialTexture.width;
 		var height = initialTexture.height;
-		var initialData = initialTexture.GetPixels(0, 0, width, height);
 		var runTimeData = runtimeTexture.GetPixels(0, 0, width, height);
+
+		var initialData = initialTexture.GetPixels(0, 0, width, height);
 		int maxScore = 0;
 		int actualScore = 0;
 		for (int x = 0; x < initialTexture.width; x++)

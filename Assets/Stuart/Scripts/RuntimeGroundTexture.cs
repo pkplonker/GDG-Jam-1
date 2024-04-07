@@ -42,6 +42,7 @@ public class RuntimeGroundTexture : MonoBehaviour
 
 	private void UpdateTexture()
 	{
+		if (target == null) return;
 		var targetPos = target.transform.position;
 		if (Vector3.Dot(target.transform.up, Vector3.up) < -0.5f) return;
 		var normalisedPosition = targetPos - startPos;

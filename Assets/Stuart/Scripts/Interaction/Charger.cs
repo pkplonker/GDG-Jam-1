@@ -27,6 +27,7 @@ public class Charger : MonoBehaviour, IHitTarget
 		{
 			throw new NullReferenceException("WTF you doing");
 		}
+
 		StopCor();
 		StartCor(battery);
 	}
@@ -59,7 +60,8 @@ public class Charger : MonoBehaviour, IHitTarget
 				break;
 			}
 
-			battery.Charge(chargeAmount);
+			if (!PauseController.Instance.IsPaused) battery.Charge(chargeAmount);
+
 			yield return wait;
 		}
 

@@ -9,6 +9,17 @@ public class TimeController : GenericUnitySingleton<TimeController>
 	private void Start()
 	{
 		StartTimer();
+		PauseController.Instance.PauseChanged += PauseControllerOnPauseChanged;
+	}
+
+	private void OnDisable()
+	{
+		PauseController.Instance.PauseChanged -= PauseControllerOnPauseChanged;
+	}
+
+	private void PauseControllerOnPauseChanged(bool obj)
+	{
+		doUpdate = !obj;
 	}
 
 	public void StartTimer()
