@@ -26,6 +26,7 @@ public class ScoreManager : GenericUnitySingleton<ScoreManager>
 
 	private void CalculateFinalScore()
 	{
+		PauseController.Instance.IsPaused = true;
 		FinalScoreData = new ScoreData
 		{
 			RubbishGathered = RubbishCollectionController.Instance.RubbishGathered,
@@ -35,6 +36,7 @@ public class ScoreManager : GenericUnitySingleton<ScoreManager>
 		CleaningScore.Instance.OnGameOver();
 		FinalScoreData.CleaningScoreData = CleaningScore.Instance.ScoreData;
 		FinalScoreData.DamagedItems = objectsBroken;
+		FinalScoreData.CompleteData = true;
 		FinalScore?.Invoke(FinalScoreData);
 		endOfRoundDisplayBehaviour.DisplayComponent(endOfRoundDisplayBehaviour, true);
 	}
@@ -47,18 +49,21 @@ public class ScoreManager : GenericUnitySingleton<ScoreManager>
 	}
 }
 
-public struct ScoreData
+public class ScoreData
 {
+	public bool CompleteData = false;
 	public int MaxRubbish;
 	public int RubbishGathered { get; set; }
 	public float RubbishGatheredPercentage => ((float) RubbishGathered / (float) MaxRubbish) * 100;
 	public CleaningScoreData CleaningScoreData { get; set; }
 	public float ElapsedTime { get; set; }
 
-	public int FinalScore => Mathf.FloorToInt(
-		((RubbishGatheredPercentage * CleaningScoreData.ScorePercentage) /
-		 Mathf.Clamp(DamagedItems, 1, float.MaxValue)) *
-		((60 * 5) - ElapsedTime));
+	public int FinalScore => !CompleteData
+		? 0
+		: Mathf.FloorToInt(
+			((RubbishGatheredPercentage * CleaningScoreData.ScorePercentage) /
+			 Mathf.Clamp(DamagedItems, 1, float.MaxValue)) *
+			((60 * 5) - ElapsedTime));
 
 	public int DamagedItems { get; set; }
 }

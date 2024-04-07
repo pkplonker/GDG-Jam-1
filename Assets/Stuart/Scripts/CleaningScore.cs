@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct CleaningScoreData
+public class CleaningScoreData
 {
 	private const float fudgeFactor = 0.7f;
 	public int MaxScore;
@@ -21,16 +21,14 @@ public class CleaningScore : GenericUnitySingleton<CleaningScore>
 	private void Start()
 	{
 		((DeadState) PlayerStateMachine.Instance.DeadState).Death += OnGameOver;
+		SetInitialData();
 	}
 
-	public void OnGameOver()
+	public void SetInitialData()
 	{
 		Texture2D initialTexture = GetComponent<GroundTextureGenerator>().savedTexture;
-		Texture2D runtimeTexture = GetComponent<RuntimeGroundTexture>().texture;
 		var width = initialTexture.width;
 		var height = initialTexture.height;
-		var runTimeData = runtimeTexture.GetPixels(0, 0, width, height);
-
 		var initialData = initialTexture.GetPixels(0, 0, width, height);
 		int maxScore = 0;
 		int actualScore = 0;
@@ -40,17 +38,36 @@ public class CleaningScore : GenericUnitySingleton<CleaningScore>
 			{
 				int oneDindex = (x * width) + y;
 				if (initialData[oneDindex] == Color.white) maxScore++;
-				if (runTimeData[oneDindex] == Color.black) actualScore++;
 			}
 		}
 
 		ScoreData = new CleaningScoreData()
 		{
-			MaxScore = maxScore,
-			ActualScore = actualScore,
 			InitialTexture = initialTexture,
-			RuntimeTexture = runtimeTexture
+			MaxScore = maxScore
 		};
+	}
+
+	public void OnGameOver()
+	{
+		Texture2D runtimeTexture = GetComponent<RuntimeGroundTexture>().texture;
+		var width = runtimeTexture.width;
+		var height = runtimeTexture.height;
+		var runTimeData = runtimeTexture.GetPixels(0, 0, width, height);
+
+		int maxScore = 0;
+		int actualScore = 0;
+		for (int x = 0; x < runtimeTexture.width; x++)
+		{
+			for (int y = 0; y < runtimeTexture.height; y++)
+			{
+				int oneDindex = (x * width) + y;
+				if (runTimeData[oneDindex] == Color.black) actualScore++;
+			}
+		}
+
+		ScoreData.ActualScore = actualScore;
+		ScoreData.RuntimeTexture = runtimeTexture;
 
 		CleaningScoreGenerated?.Invoke(ScoreData);
 	}
