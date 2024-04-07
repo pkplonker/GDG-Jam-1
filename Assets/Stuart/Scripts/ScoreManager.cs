@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
@@ -13,11 +14,14 @@ public class ScoreManager : MonoBehaviour
 	private TimeController timeController;
 	private CleaningScore cleaningScore;
 
+	[SerializeField]
+	private float deathEndDelay = 2f;
+
 	private void Start()
 	{
-		((DeadState) PlayerStateMachine.Instance.DeadState).Death += OnGameOver;
+		((DeadState) PlayerStateMachine.Instance.DeadState).Death += () => OnGameOver(true);
 		//subscribe to any other "game over" events
-		overlay.FinishedGame += OnGameOver;
+		overlay.FinishedGame += () => OnGameOver(false);
 		Breakable.ObjectBroken += OnObjectBroken;
 		pauseController = FindObjectOfType<PauseController>();
 		rubbishCollectionController = FindObjectOfType<RubbishCollectionController>();
@@ -30,9 +34,9 @@ public class ScoreManager : MonoBehaviour
 		objectsBroken++;
 	}
 
-	private void OnGameOver() => CalculateFinalScore();
+	private void OnGameOver(bool death) => CalculateFinalScore(death);
 
-	private void CalculateFinalScore()
+	private void CalculateFinalScore(bool death)
 	{
 		pauseController.IsPaused = true;
 		FinalScoreData = new ScoreData
@@ -46,13 +50,19 @@ public class ScoreManager : MonoBehaviour
 		FinalScoreData.DamagedItems = objectsBroken;
 		FinalScoreData.CompleteData = true;
 		FinalScore?.Invoke(FinalScoreData);
+		if (death) StartCoroutine(Cor());
+		else endOfRoundDisplayBehaviour.DisplayComponent(endOfRoundDisplayBehaviour, true);
+	}
+
+	private IEnumerator Cor()
+	{
+		yield return new WaitForSeconds(deathEndDelay);
 		endOfRoundDisplayBehaviour.DisplayComponent(endOfRoundDisplayBehaviour, true);
+
 	}
 
 	private void OnDisable()
 	{
-		((DeadState) PlayerStateMachine.Instance.DeadState).Death -= OnGameOver;
-		overlay.FinishedGame -= OnGameOver;
 		Breakable.ObjectBroken -= OnObjectBroken;
 	}
 }
