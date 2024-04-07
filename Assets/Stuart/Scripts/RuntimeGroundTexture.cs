@@ -34,6 +34,7 @@ public class RuntimeGroundTexture : MonoBehaviour
 		xIncrement = generator.extents.x / textureSize.x;
 		zIncrement = generator.extents.y / textureSize.y;
 	}
+
 	private void Update()
 	{
 		UpdateTexture();
@@ -42,6 +43,7 @@ public class RuntimeGroundTexture : MonoBehaviour
 	private void UpdateTexture()
 	{
 		var targetPos = target.transform.position;
+		if (Vector3.Dot(target.transform.up, Vector3.up) < -0.5f) return;
 		var normalisedPosition = targetPos - startPos;
 		var xDelta = normalisedPosition.x / xIncrement;
 		var yDelta = normalisedPosition.z / zIncrement;
@@ -51,7 +53,7 @@ public class RuntimeGroundTexture : MonoBehaviour
 
 		deltaCalculatedPos = new Vector3(startPos.x, 0, startPos.z) +
 		                     new Vector3(centreIndex.x * xIncrement, 0, centreIndex.y * zIncrement);
-		float maxDistance = targetRadius / xIncrement; 
+		float maxDistance = targetRadius / xIncrement;
 
 		for (var x = xStart * -1; x < xStart; x++)
 		{
