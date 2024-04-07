@@ -26,6 +26,7 @@ public class Breakable : MonoBehaviour
 
     private void Break()
     {
+        AudioManager.Instance.PlaySoundEffect(AudioManager.Instance.globalSoundList.potSmash);
         ObjectBroken?.Invoke();
         broken = true;
         gameObject.SetActive(false);
