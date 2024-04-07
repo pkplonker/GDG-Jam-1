@@ -77,6 +77,11 @@ public class CameraManager : MonoBehaviour
 
     private void OnDeath()
     {
+        Invoke("ToDeathCam", 1.0f);
+    }
+
+    private void ToDeathCam()
+    {
         firstPersonCamera.SetActive(false);
         topDownCamera.SetActive(false);
         thirdPersonCamera.SetActive(false);
