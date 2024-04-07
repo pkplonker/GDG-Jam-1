@@ -63,8 +63,7 @@ public class RuntimeGroundTexture : MonoBehaviour
 				var distance = Vector2.Distance(pos, centreIndex);
 				if (distance <= (targetRadius / xIncrement) / 2)
 				{
-					var val = Mathf.Exp(-(distance/maxDistance));
-					texture.SetPixel(pos.x, pos.y, Color.Lerp(Color.white, Color.black, val));
+					texture.SetPixel(pos.x, pos.y, Color.black);
 				}
 			}
 		}
