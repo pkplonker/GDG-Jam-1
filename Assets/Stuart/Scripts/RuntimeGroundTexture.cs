@@ -34,19 +34,6 @@ public class RuntimeGroundTexture : MonoBehaviour
 		xIncrement = generator.extents.x / textureSize.x;
 		zIncrement = generator.extents.y / textureSize.y;
 	}
-
-	private void OnDrawGizmos()
-	{
-		Gizmos.color = Color.red;
-		Gizmos.DrawSphere(startPos, 0.5f);
-		// Gizmos.color = Color.green;
-		// Gizmos.DrawSphere(generator.startPosition, 0.5f);
-		// Gizmos.color = Color.blue;
-		// Gizmos.DrawSphere(target.transform.position, 0.1f);
-		// Gizmos.color = Color.magenta;
-		// Gizmos.DrawSphere(deltaCalculatedPos, 0.5f);
-	}
-
 	private void Update()
 	{
 		UpdateTexture();
@@ -58,24 +45,26 @@ public class RuntimeGroundTexture : MonoBehaviour
 		var normalisedPosition = targetPos - startPos;
 		var xDelta = normalisedPosition.x / xIncrement;
 		var yDelta = normalisedPosition.z / zIncrement;
-		var centreIndex = new Vector2Int(Mathf.RoundToInt(xDelta), Mathf.RoundToInt(yDelta));
-		var xStart = Mathf.RoundToInt((targetRadius / xIncrement) / 2);
-		var yStart = Mathf.RoundToInt((targetRadius / zIncrement) / 2);
+		var centreIndex = new Vector2Int(Mathf.CeilToInt(xDelta), Mathf.CeilToInt(yDelta));
+		var xStart = Mathf.CeilToInt((targetRadius / xIncrement) / 2);
+		var yStart = Mathf.CeilToInt((targetRadius / zIncrement) / 2);
 
 		deltaCalculatedPos = new Vector3(startPos.x, 0, startPos.z) +
 		                     new Vector3(centreIndex.x * xIncrement, 0, centreIndex.y * zIncrement);
+		float maxDistance = targetRadius / xIncrement; 
 
 		for (var x = xStart * -1; x < xStart; x++)
 		{
 			for (var y = yStart * -1; y < yStart; y++)
 			{
-				var pos = new Vector2Int(centreIndex.x  + x, centreIndex.y + y);
+				var pos = new Vector2Int(centreIndex.x + x, centreIndex.y + y);
 				if (pos.x > textureSize.x || pos.x < 0 || pos.y > textureSize.y ||
 				    pos.y < 0) continue;
-				if (Vector2.Distance(pos, centreIndex) <= (targetRadius / xIncrement) / 2)
+				var distance = Vector2.Distance(pos, centreIndex);
+				if (distance <= (targetRadius / xIncrement) / 2)
 				{
-				
-					texture.SetPixel(pos.x, pos.y, Color.black);
+					var val = Mathf.Exp(-(distance/maxDistance));
+					texture.SetPixel(pos.x, pos.y, Color.Lerp(Color.white, Color.black, val));
 				}
 			}
 		}

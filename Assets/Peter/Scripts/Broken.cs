@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Broken : MonoBehaviour
 {
-    [SerializeField] float impactForce = 5;
+	[SerializeField]
+	float impactForce = 5;
 
-    void Start()
-    {
-        Rigidbody rb = GetComponent<Rigidbody>();
+	void Start()
+	{
+		Rigidbody rb = GetComponent<Rigidbody>();
 
-        Vector3 force = new Vector3(Random.Range(-impactForce, impactForce), Random.Range(-impactForce, impactForce), Random.Range(-impactForce, impactForce));
+		Vector3 force = new Vector3(Random.Range(-impactForce, impactForce), Random.Range(-impactForce, impactForce),
+			Random.Range(-impactForce, impactForce));
 
-        rb.AddForce(force, ForceMode.Impulse);
-    }
+		rb.AddForce(force, ForceMode.Impulse);
+	}
 }
