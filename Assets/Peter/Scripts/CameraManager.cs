@@ -12,24 +12,24 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private GameObject topDownCamera;
     [SerializeField] private GameObject deathCamera;
     
-    private PeterTestControls input = null;
+    private CameraInput input = null;
 
     private bool paused = false;
 
     private void Awake()
     {
-        input = new PeterTestControls();
+        input = new CameraInput();
     }
 
     private void OnEnable()
     {
-        input.PlayerTest.Cameras.performed += OnCameraInput;
+        input.cameraSwap.camera.performed += OnCameraInput;
         PauseController.Instance.PauseChanged += SwapPause;
     }
 
     private void OnDisable()
     {
-        input.PlayerTest.Cameras.performed -= OnCameraInput;
+        input.cameraSwap.camera.performed -= OnCameraInput;
         PauseController.Instance.PauseChanged -= SwapPause;
     }
 
