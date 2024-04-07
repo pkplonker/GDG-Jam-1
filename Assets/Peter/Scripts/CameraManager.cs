@@ -23,14 +23,20 @@ public class CameraManager : MonoBehaviour
 
     private void OnEnable()
     {
+        input.Enable();
         input.cameraSwap.camera.performed += OnCameraInput;
         PauseController.Instance.PauseChanged += SwapPause;
+
+        ((DeadState)PlayerStateMachine.Instance.DeadState).Death += OnDeath;
     }
 
     private void OnDisable()
     {
+        input.Disable();
         input.cameraSwap.camera.performed -= OnCameraInput;
         PauseController.Instance.PauseChanged -= SwapPause;
+
+        ((DeadState)PlayerStateMachine.Instance.DeadState).Death -= OnDeath;
     }
 
     private void SwapPause(bool _paused)
