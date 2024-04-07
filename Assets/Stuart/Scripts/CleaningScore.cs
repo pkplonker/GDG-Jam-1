@@ -31,7 +31,6 @@ public class CleaningScore : GenericUnitySingleton<CleaningScore>
 		var height = initialTexture.height;
 		var initialData = initialTexture.GetPixels(0, 0, width, height);
 		int maxScore = 0;
-		int actualScore = 0;
 		for (int x = 0; x < initialTexture.width; x++)
 		{
 			for (int y = 0; y < initialTexture.height; y++)
@@ -55,7 +54,6 @@ public class CleaningScore : GenericUnitySingleton<CleaningScore>
 		var height = runtimeTexture.height;
 		var runTimeData = runtimeTexture.GetPixels(0, 0, width, height);
 
-		int maxScore = 0;
 		int actualScore = 0;
 		for (int x = 0; x < runtimeTexture.width; x++)
 		{
