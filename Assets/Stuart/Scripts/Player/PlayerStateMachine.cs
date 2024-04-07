@@ -13,10 +13,6 @@ public class PlayerStateMachine : StateMachine
 	[SerializeField]
 	public MovementStats MovementStats;
 
-    public GameObject thirdPersonCamera;
-    public GameObject firstPersonCamera;
-    public GameObject topDownCamera;
-
     public static PlayerStateMachine Instance;
 	private Battery battery;
 
