@@ -43,7 +43,7 @@ public class EndOfRoundDisplayBehaviour : UIComponent
 			if (scores.CleaningScoreData != null)
 				travesersalPercentage.text = (scores.CleaningScoreData.ScorePercentage).ToString("F0") + "%";
 
-			finalGradeText.text = scores.FinalScore.ToString();
+			//finalGradeText.text = scores.FinalScore.ToString();
 			var texture = scores.CleaningScoreData.RuntimeTexture;
 
 			traversalMap.texture = texture;
@@ -52,8 +52,15 @@ public class EndOfRoundDisplayBehaviour : UIComponent
 		//Set Final Grade
 
 		int finalStars = 1;
+		float finalScore = scores.FinalScore;
+		if (finalScore < 2000) finalStars = 1;
+		else if (finalScore >= 2000 && finalScore < 4000) finalStars = 2;
+		else if (finalScore >= 4000 && finalScore < 6000) finalStars = 3;
+		else if (finalScore >= 6000 && finalScore < 8000) finalStars = 4;
+		else if (finalScore >= 8000) finalStars = 5;
 
-        for (int i = 0; i<stars.Count;i++)
+
+		for (int i = 0; i<stars.Count;i++)
         {
 			stars[i].gameObject.SetActive(false);
         }
