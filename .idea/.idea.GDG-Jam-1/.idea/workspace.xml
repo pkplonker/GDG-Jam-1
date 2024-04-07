@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3cd1cef-2ea5-4c08-8efa-a1b9dab781dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Final/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Final/Level2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/CleaningScore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/CleaningScore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/ScoreManager.cs" afterDir="false" />
-    </list>
+    <list default="true" id="b3cd1cef-2ea5-4c08-8efa-a1b9dab781dd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +120,7 @@
       <workItem from="1712392470685" duration="18179000" />
       <workItem from="1712417070706" duration="17408000" />
       <workItem from="1712441766543" duration="11908000" />
-      <workItem from="1712497067541" duration="1773000" />
+      <workItem from="1712497067541" duration="2939000" />
     </task>
     <servers />
   </component>

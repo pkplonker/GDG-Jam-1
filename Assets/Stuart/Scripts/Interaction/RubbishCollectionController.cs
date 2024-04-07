@@ -7,6 +7,7 @@ public class RubbishCollectionController : GenericUnitySingleton<RubbishCollecti
 {
 	public static event Action<int> OnScoreChanged;
 	private int rubbishGathered;
+	public int MaxRubbish;
 
 	public int RubbishGathered
 	{
@@ -24,6 +25,7 @@ public class RubbishCollectionController : GenericUnitySingleton<RubbishCollecti
 	private void Start()
 	{
 		Gatherer.TargetHit += OnTargetHit;
+		MaxRubbish = FindObjectsOfType<Rubbish>().Length;
 	}
 
 	private void OnTargetHit(IHitTarget target)

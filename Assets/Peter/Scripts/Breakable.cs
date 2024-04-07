@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Breakable : MonoBehaviour
 {
+    public static event Action ObjectBroken; 
     [SerializeField] GameObject brokenVarient;
     
     [SerializeField] float breakThreshold = 89;
@@ -23,7 +26,7 @@ public class Breakable : MonoBehaviour
 
     private void Break()
     {
-        Debug.Log("break");
+        ObjectBroken?.Invoke();
         broken = true;
         gameObject.SetActive(false);
         GameObject obj = Instantiate(brokenVarient, transform.position, transform.rotation);
