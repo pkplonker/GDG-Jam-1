@@ -27,12 +27,12 @@ public class MainMenuBehaviour : UIComponent
 
     public void OnSettings()
     {
-        DisplayComponent(settings,true);
+        settings.DisplayComponent(settings,true);
     }
 
     public void OnCredits()
     {
-        DisplayComponent(credits,true);
+        credits.DisplayComponent(credits,true);
     }
 
     public void OnExitGame()
