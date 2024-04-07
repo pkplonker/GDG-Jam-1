@@ -70,8 +70,7 @@ public class ScoreData
 		? 0
 		: Mathf.FloorToInt(
 			((RubbishGatheredPercentage * CleaningScoreData.ScorePercentage) /
-			 Mathf.Clamp(DamagedItems, 1, float.MaxValue)) *
-			((60 * 5) - ElapsedTime));
+			 Mathf.Clamp(DamagedItems, 1, float.MaxValue)));
 
 	public int DamagedItems { get; set; }
 }

@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3cd1cef-2ea5-4c08-8efa-a1b9dab781dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Final/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Final/Level2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Luke/Prefabs/UI/Menus/EndOfRoundDisplay.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Luke/Prefabs/UI/Menus/EndOfRoundDisplay.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Luke/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Luke/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Luke/Scripts/UI/Menus/EndOfRoundDisplayBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Luke/Scripts/UI/Menus/EndOfRoundDisplayBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stuart/Scripts/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stuart/Scripts/ScoreManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
