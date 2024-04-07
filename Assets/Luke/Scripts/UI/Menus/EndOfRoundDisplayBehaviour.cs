@@ -16,6 +16,7 @@ public class EndOfRoundDisplayBehaviour : UIComponent
 	public RawImage traversalMap;
 	public Image finalGrade;
 	public TextMeshProUGUI finalGradeText;
+	public GameObject continueButton;
 
 	public List<Image> stars;
 	private ScoreManager scoreManager;
@@ -62,11 +63,16 @@ public class EndOfRoundDisplayBehaviour : UIComponent
 		{
 			stars[i].gameObject.SetActive(true);
 		}
+
+		if (SceneManager.GetActiveScene().name == "Level2")
+		{
+			continueButton.SetActive(false);
+		}
 	}
 
 	public void OnContinueGame()
 	{
-		Debug.Log("Continuing Game");
+		SceneManager.LoadScene("Level2");
 	}
 
 	public void OnReturnToMenu()
