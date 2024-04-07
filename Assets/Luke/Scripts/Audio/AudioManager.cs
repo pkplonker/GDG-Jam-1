@@ -23,11 +23,13 @@ public class AudioManager : GenericUnitySingleton<AudioManager>
 
     protected override void Awake()
     {
+        base.Awake();
+
         globalSoundList = GetComponent<GlobalSoundList>();   
         if (globalSoundList == null) Debug.LogWarning("No Sound List Present on AudioManager, Please Create One");
 
         _globalVolume = 1;
-        _musicVolume = 1;
+        _musicVolume = 0.5f;
         _fxVolume = 1;
     }
 

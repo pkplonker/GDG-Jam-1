@@ -17,6 +17,7 @@ public class Rubbish : MonoBehaviour, IHitTarget
 	private void HandleHit(Gatherer gatherer)
 	{
 		gatherer.Hit(this);
+		AudioManager.Instance.PlaySoundEffect(AudioManager.Instance.globalSoundList.suck);
 		DestroyRubbish();
 	}
 

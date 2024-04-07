@@ -5,4 +5,6 @@ using UnityEngine;
 public class GlobalSoundList : MonoBehaviour
 {
     public AudioClip uiclick;
+    public AudioClip deathExplosion;
+    public AudioClip suck;
 }

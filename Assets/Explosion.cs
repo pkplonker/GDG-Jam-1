@@ -16,5 +16,7 @@ public class Explosion : MonoBehaviour
    private void OnGameOver()
    {
       vfx.SetActive(true);
-   }
+        AudioManager.Instance.PlaySoundEffect(AudioManager.Instance.globalSoundList.deathExplosion);
+
+    }
 }
