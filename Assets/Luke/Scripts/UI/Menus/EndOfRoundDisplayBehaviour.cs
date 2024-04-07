@@ -17,6 +17,8 @@ public class EndOfRoundDisplayBehaviour : UIComponent
 	public Image finalGrade;
 	public TextMeshProUGUI finalGradeText;
 
+	public List<Image> stars;
+
 	protected override void SetVals()
 	{
 		ScoreData scores = ScoreManager.Instance.FinalScoreData;
@@ -39,6 +41,19 @@ public class EndOfRoundDisplayBehaviour : UIComponent
 		}
 
 		//Set Final Grade
+
+		int finalStars = 1;
+
+        for (int i = 0; i<stars.Count;i++)
+        {
+			stars[i].gameObject.SetActive(false);
+        }
+
+
+		for (int i = 0; i < finalStars; i++)
+		{
+			stars[i].gameObject.SetActive(true);
+		}
 	}
 
 	public void OnContinueGame()
