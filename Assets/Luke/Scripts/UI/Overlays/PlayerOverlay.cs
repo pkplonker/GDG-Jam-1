@@ -32,7 +32,7 @@ public class PlayerOverlay : MonoBehaviour
     public void OnFinishLevel()
     {
         Debug.Log("Finishing Level");
-        FinishedGame.Invoke();
+        FinishedGame?.Invoke();
 
     }
     private void OnEnable()

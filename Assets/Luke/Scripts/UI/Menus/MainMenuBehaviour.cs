@@ -24,7 +24,7 @@ public class MainMenuBehaviour : UIComponent
     public void OnStartGame()
     {
         Debug.Log("Starting Game");
-        SceneManager.LoadScene("FirstScene");
+        SceneManager.LoadScene("Level1");
     }
 
     public void OnSettings()
